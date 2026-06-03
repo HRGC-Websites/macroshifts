@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 400">
+  <!-- Square mark on the left -->
+  <g>
+    <rect x="0" y="0" width="400" height="400" rx="88" fill="#15307E"/>
+    <text x="200" y="295"
+          font-family="Instrument Serif, Georgia, 'Times New Roman', serif"
+          font-style="italic" font-weight="400"
+          font-size="340" fill="#F6EFE2"
+          text-anchor="middle">m</text>
+    <path d="M 78 332 Q 200 372 322 332"
+          stroke="#FF6A45" stroke-width="16"
+          stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- Wordmark on the right, vertically centered with the mark -->
+  <text x="500" y="285"
+        font-family="Instrument Serif, Georgia, 'Times New Roman', serif"
+        font-style="italic" font-weight="400"
+        font-size="260" fill="#15307E"
+        dominant-baseline="alphabetic">macroshifts</text>
+</svg>
