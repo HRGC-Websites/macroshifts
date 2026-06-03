@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Macroshifts</title>
+<link rel="stylesheet" href="assets/brand.css">
+<style>
+  .page-hero { background: var(--royal); color: var(--cream); padding: clamp(64px,8vw,120px) 0 clamp(56px,7vw,90px); }
+  .page-hero .display { color: var(--cream); }
+  .page-hero .serif { color: var(--coral); }
+
+  .vals { display:grid; grid-template-columns: repeat(3,1fr); gap:22px; }
+  @media (max-width:860px){ .vals{ grid-template-columns:1fr; } }
+  .val .n { font-family:var(--font-serif); font-style:italic; font-size:2rem; color:var(--coral); }
+  .val h3 { margin:10px 0 8px; }
+  .val p { margin:0; opacity:.82; font-size:.97rem; }
+
+  .team { display:grid; grid-template-columns: repeat(4,1fr); gap:24px; }
+  @media (max-width:860px){ .team{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:480px){ .team{ grid-template-columns:1fr; } }
+  .member .ph { aspect-ratio:3/4; border-radius:var(--r-md); margin-bottom:14px; }
+  .member strong { font-family:var(--font-display); display:block; }
+  .member span { opacity:.6; font-size:.92rem; }
+
+  .timeline { border-left:2px solid var(--line-light); margin-left:8px; }
+  .tl { padding:0 0 36px 34px; position:relative; }
+  .tl:last-child{ padding-bottom:0; }
+  .tl::before { content:""; position:absolute; left:-9px; top:4px; width:16px; height:16px; border-radius:50%; background:var(--coral); }
+  .tl .yr { font-family:var(--font-display); font-weight:700; color:var(--coral); }
+  .tl h3 { color:var(--cream); margin:4px 0 6px; }
+  .tl p { opacity:.74; margin:0; }
+</style>
+</head>
+<body>
+
+<header class="nav" data-screen-label="About nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="Home.html" aria-label="Macroshifts home"><img src="assets/logo-navy.png" alt="Macroshifts"></a>
+    <nav class="nav-links">
+      <a href="Home.html">Home</a>
+      <a href="Services.html">Services</a>
+      <a href="About.html" class="active">About</a>
+      <a href="Contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="Contact.html" class="btn btn-primary">Pitch your idea <span class="arr">→</span></a>
+      <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="page-hero" data-screen-label="About hero">
+  <div class="container">
+    <span class="eyebrow reveal" style="opacity:.85;">About</span>
+    <h1 class="display reveal" data-delay="60" style="margin-top:20px;max-width:18ch;">We exist for the people with the <span class="serif">idea.</span></h1>
+    <p class="lead measure reveal" data-delay="140" style="margin-top:24px;max-width:58ch;opacity:.85;">Macroshifts started because too many great ideas die in a notes app — stuck between a founder who can see it and the team, plan, and capital it takes to make it real. We're the bridge.</p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="section bg-cream">
+  <div class="container">
+    <div class="grid" style="grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;">
+      <div class="art art--orbit reveal" style="aspect-ratio:4/5;"></div>
+      <div class="reveal" data-delay="100">
+        <span class="eyebrow">Our story</span>
+        <h2 class="title" style="margin:18px 0 18px;">A studio, not a vendor.</h2>
+        <p style="opacity:.86;">We spent years inside agencies and venture funds watching the same gap: consultants who'd write a strategy but never build it, dev shops who'd build whatever you asked but never question it, and investors who only showed up once the risk was gone.</p>
+        <p style="opacity:.86;">So we built the thing we wished existed — one team that sits with a founder from the first rough sentence, shapes it into a plan, engineers the product, keeps it running, and stands beside them when it's time to raise. We win when you do.</p>
+        <p style="opacity:.86;">That's a macroshift: the moment an idea stops being a hope and becomes a company.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section bg-cream2">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:44px;max-width:46ch;">
+      <span class="eyebrow">What we believe</span>
+      <h2 class="title" style="margin-top:16px;">Four principles we don't bend.</h2>
+    </div>
+    <div class="vals">
+      <div class="val card reveal"><div class="n">01</div><h3>Truth over flattery</h3><p>If the idea won't work, you'll hear it from us first — early, when it's cheap to change course.</p></div>
+      <div class="val card reveal" data-delay="80"><div class="n">02</div><h3>Skin in the game</h3><p>We take equity because we believe in the outcome, not just the invoice. Your win is our win.</p></div>
+      <div class="val card reveal" data-delay="160"><div class="n">03</div><h3>Senior hands only</h3><p>The people who plan your product are the ones who build it. No hand-offs to a junior bench.</p></div>
+      <div class="val card reveal" data-delay="240"><div class="n">04</div><h3>Ship, then learn</h3><p>Real products in front of real users beat perfect decks every time. We move, measure, adjust.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section bg-cream">
+  <div class="container">
+    <div class="row reveal" style="justify-content:space-between;align-items:flex-end;margin-bottom:40px;">
+      <div>
+        <span class="eyebrow">The team</span>
+        <h2 class="title" style="margin-top:16px;">Builders, strategists, and one ex-VC.</h2>
+      </div>
+      <a href="Contact.html" class="btn btn-outline on-light">Work with us <span class="arr">→</span></a>
+    </div>
+    <div class="team">
+      <div class="member reveal"><div class="ph portrait c1"><b>D</b></div><strong>Daniel Okafor</strong><span>Founder &amp; CEO</span></div>
+      <div class="member reveal" data-delay="80"><div class="ph portrait c2"><b>S</b></div><strong>Sofia Reyes</strong><span>Head of Product Strategy</span></div>
+      <div class="member reveal" data-delay="160"><div class="ph portrait c3"><b>M</b></div><strong>Marcus Lin</strong><span>Engineering Lead</span></div>
+      <div class="member reveal" data-delay="240"><div class="ph portrait c4"><b>A</b></div><strong>Amara Diallo</strong><span>Partner, Investment</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section bg-ink">
+  <div class="container">
+    <div class="grid" style="grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start;">
+      <div class="reveal">
+        <span class="eyebrow" style="opacity:.85;">The journey</span>
+        <h2 class="title" style="color:var(--cream);margin-top:16px;">Nine years of shifts.</h2>
+        <p class="lead" style="opacity:.78;margin-top:14px;">From a two-person consultancy to a full venture studio.</p>
+      </div>
+      <div class="timeline reveal" data-delay="100">
+        <div class="tl"><div class="yr">2017</div><h3>The first shift</h3><p>Two founders leave their agency jobs to build products they actually believe in.</p></div>
+        <div class="tl"><div class="yr">2019</div><h3>From building to backing</h3><p>We take equity in our first client instead of a fee — and Macroshifts becomes a studio.</p></div>
+        <div class="tl"><div class="yr">2022</div><h3>The operate layer</h3><p>We add managed IT so the products we ship keep running and growing after launch.</p></div>
+        <div class="tl"><div class="yr">2026</div><h3>40+ companies later</h3><p>A portfolio of founders we've taken from idea to funded — and we're just getting started.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section--tight bg-paper">
+  <div class="container">
+    <div class="cta-band dots reveal" style="color:#fff;">
+      <div style="position:relative;">
+        <h2 class="title" style="max-width:20ch;margin-inline:auto;">Think we'd get along?</h2>
+        <p class="lead" style="max-width:44ch;margin:18px auto 0;color:#fff;opacity:.95;">We'd love to hear what you're building. The first conversation is always free.</p>
+        <div class="row" style="justify-content:center;margin-top:30px;">
+          <a href="Contact.html" class="btn btn-ink">Start a conversation <span class="arr">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer" data-screen-label="Footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <div class="footer-logo"><img src="assets/logo-cream.png" alt="Macroshifts"></div>
+        <p style="opacity:.7;max-width:30ch;">The venture studio that turns founders' ideas into funded companies.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="Home.html">Home</a><a href="About.html">About</a><a href="Services.html">Services</a><a href="Contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="Services.html">Websites &amp; apps</a><a href="Services.html">SEO &amp; digital growth</a><a href="Services.html">Strategy &amp; consulting</a><a href="Services.html">Managed IT</a><a href="Services.html">Investment support</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <a href="Contact.html">hello@macroshifts.com</a><a href="Contact.html">Book a call</a><a href="#">LinkedIn</a><a href="#">X / Twitter</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Macroshifts. All rights reserved.</span>
+      <span>From idea to enterprise.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

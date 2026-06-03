@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Macroshifts</title>
+<link rel="stylesheet" href="assets/brand.css">
+<style>
+  .page-hero { background: var(--royal); color: var(--cream); padding: clamp(64px,8vw,120px) 0 clamp(56px,7vw,90px); }
+  .page-hero .display { color: var(--cream); }
+  .page-hero .serif { color: var(--coral); }
+
+  .svc-row { display: grid; grid-template-columns: 96px 1.1fr 1fr; gap: 40px; align-items: center; padding: clamp(48px,6vw,84px) 0; border-bottom: 1px solid var(--line); }
+  .svc-row:last-child { border-bottom: none; }
+  .svc-row .idx { font-family: var(--font-display); font-weight: 700; font-size: 2.6rem; color: var(--coral); letter-spacing: -.04em; }
+  .svc-row h2 { font-size: clamp(1.8rem,3vw,2.6rem); margin-bottom: 16px; }
+  .svc-row .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+  .svc-row .panel { aspect-ratio: 4/3; border-radius: var(--r-lg); position: relative; overflow: hidden; }
+  .svc-row:nth-child(even) { grid-template-columns: 96px 1fr 1.1fr; }
+  .svc-row:nth-child(even) .text { order: 3; }
+  .svc-row:nth-child(even) .panel { order: 2; }
+  .svc-row:nth-child(even) .idx { order: 1; }
+  @media (max-width: 860px){
+    .svc-row, .svc-row:nth-child(even){ grid-template-columns: 1fr; gap: 24px; }
+    .svc-row:nth-child(even) .text{ order:2; } .svc-row:nth-child(even) .panel{ order:3; } .svc-row:nth-child(even) .idx{ order:1; }
+    .svc-row .panel{ aspect-ratio:16/9; }
+  }
+
+  .deliver { display:flex; flex-direction:column; gap:0; }
+  .deliver div { padding: 12px 0; border-top: 1px solid var(--line); display:flex; gap:12px; }
+  .deliver div::before { content:"→"; color: var(--coral); }
+
+  .eng { display:grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+  @media (max-width:860px){ .eng{ grid-template-columns:1fr; } }
+  .eng .card h3 { color: var(--ink); }
+  .eng .price { font-family: var(--font-display); font-weight:700; font-size:1.5rem; margin: 6px 0 14px; }
+  .eng .feat { list-style:none; padding:0; margin:14px 0 0; }
+  .eng .feat li { padding:9px 0; border-top:1px solid var(--line); font-size:.95rem; opacity:.82; display:flex; gap:10px; }
+  .eng .feat li::before { content:"✓"; color: var(--coral); font-weight:700; }
+  .eng .featured { background: var(--royal); color: var(--cream); border-color: transparent; }
+  .eng .featured h3, .eng .featured .price { color: var(--cream); }
+  .eng .featured .feat li { border-color: var(--line-light); opacity:.9; }
+</style>
+</head>
+<body>
+
+<header class="nav" data-screen-label="Services nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="Home.html" aria-label="Macroshifts home"><img src="assets/logo-navy.png" alt="Macroshifts"></a>
+    <nav class="nav-links">
+      <a href="Home.html">Home</a>
+      <a href="Services.html" class="active">Services</a>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="Contact.html" class="btn btn-primary">Pitch your idea <span class="arr">→</span></a>
+      <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="page-hero" data-screen-label="Services hero">
+  <div class="container">
+    <span class="eyebrow reveal" style="opacity:.85;">Services</span>
+    <h1 class="display reveal" data-delay="60" style="margin-top:20px;max-width:20ch;">Everything it takes to go from <span class="serif">idea</span> to enterprise.</h1>
+    <p class="lead measure reveal" data-delay="140" style="margin-top:24px;max-width:60ch;opacity:.85;">For founders launching something new and businesses growing what they've already built. Pick the piece you need or hand us the whole journey — strategy, websites and apps, SEO, operations, and the introductions that bring in capital.</p>
+  </div>
+</section>
+
+<!-- SERVICE ROWS -->
+<section class="section bg-cream">
+  <div class="container">
+
+    <div class="svc-row reveal">
+      <div class="idx">01</div>
+      <div class="text">
+        <span class="eyebrow">Build</span>
+        <h2 style="margin-top:14px;">Websites, apps &amp; software development</h2>
+        <p style="opacity:.85;">From a startup's first product to an established brand's website rebuild, senior engineers design and ship the real thing — marketing sites, web platforms, mobile apps, and the integrations that connect them to the tools you already use. We build to scale from day one.</p>
+        <div class="deliver mt-m">
+          <div>Marketing websites &amp; e-commerce</div>
+          <div>Web platforms &amp; mobile apps</div>
+          <div>API design &amp; third-party integrations</div>
+          <div>For new &amp; established businesses</div>
+        </div>
+      </div>
+      <div class="panel art art--orbit"></div>
+    </div>
+
+    <div class="svc-row reveal">
+      <div class="idx">02</div>
+      <div class="text">
+        <span class="eyebrow">Grow</span>
+        <h2 style="margin-top:14px;">SEO &amp; digital growth</h2>
+        <p style="opacity:.85;">Getting built is only half the job — people have to find you. We tune your site for search, sharpen the content, and run the campaigns and analytics that turn visitors into paying customers, month after month.</p>
+        <div class="deliver mt-m">
+          <div>Technical &amp; on-page SEO</div>
+          <div>Content &amp; performance marketing</div>
+          <div>Analytics &amp; conversion optimisation</div>
+          <div>Local &amp; e-commerce search</div>
+        </div>
+      </div>
+      <div class="panel art art--bars"></div>
+    </div>
+
+    <div class="svc-row reveal">
+      <div class="idx">03</div>
+      <div class="text">
+        <span class="eyebrow">Consult</span>
+        <h2 style="margin-top:14px;">Strategy &amp; digital transformation</h2>
+        <p style="opacity:.85;">Before a line of code, we pressure-test the idea. You leave with a product strategy, a technical roadmap, and a go-to-market plan that's exciting to build — and convincing in front of investors and boards.</p>
+        <div class="deliver mt-m">
+          <div>Opportunity &amp; market validation</div>
+          <div>Product &amp; technology roadmaps</div>
+          <div>Digital transformation for legacy ops</div>
+          <div>Investor-ready narrative &amp; metrics</div>
+        </div>
+      </div>
+      <div class="panel art art--arcs"></div>
+    </div>
+
+    <div class="svc-row reveal">
+      <div class="idx">04</div>
+      <div class="text">
+        <span class="eyebrow">Operate</span>
+        <h2 style="margin-top:14px;">Managed IT &amp; support</h2>
+        <p style="opacity:.85;">Launch is the start, not the finish. We run the infrastructure, watch the dashboards, patch the security holes, and answer the pages — so your team stays focused on customers and the raise instead of on-call rotations.</p>
+        <div class="deliver mt-m">
+          <div>Cloud &amp; infrastructure management</div>
+          <div>Security, monitoring &amp; compliance</div>
+          <div>Helpdesk &amp; user support with SLAs</div>
+          <div>Ongoing performance &amp; cost tuning</div>
+        </div>
+      </div>
+      <div class="panel art art--grid"></div>
+    </div>
+
+    <div class="svc-row reveal">
+      <div class="idx">05</div>
+      <div class="text">
+        <span class="eyebrow">Raise</span>
+        <h2 style="margin-top:14px;">Investment support</h2>
+        <p style="opacity:.85;">When the product is real and the metrics are moving, we open our network. Warm introductions to angels and funds, a deck that holds up to diligence, and a founder coached to walk into the room ready.</p>
+        <div class="deliver mt-m">
+          <div>Pitch deck &amp; financial model</div>
+          <div>Warm investor introductions</div>
+          <div>Diligence &amp; data-room prep</div>
+          <div>Negotiation &amp; term-sheet guidance</div>
+        </div>
+      </div>
+      <div class="panel art art--field"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ENGAGEMENT MODELS -->
+<section class="section bg-cream2">
+  <div class="container">
+    <div class="center reveal" style="max-width:50ch;margin-inline:auto;margin-bottom:48px;">
+      <span class="eyebrow" style="justify-content:center;">How we engage</span>
+      <h2 class="title" style="margin-top:18px;">Built for where you are right now.</h2>
+      <p class="lead" style="margin-top:14px;opacity:.8;">Three ways to work with us — and they flex as you grow.</p>
+    </div>
+    <div class="eng">
+      <article class="card reveal">
+        <h3>Sprint</h3>
+        <div class="price">From $8k</div>
+        <p style="opacity:.82;margin:0;">A fixed, fast engagement to validate the idea and ship a working prototype you can show.</p>
+        <ul class="feat">
+          <li>2–4 week timeline</li>
+          <li>Strategy + clickable build</li>
+          <li>Roadmap &amp; estimate to scale</li>
+        </ul>
+      </article>
+      <article class="card featured reveal" data-delay="100">
+        <span class="pill" style="border-color:var(--line-light);margin-bottom:16px;">Most founders start here</span>
+        <h3>Studio partner</h3>
+        <div class="price">Fee + equity</div>
+        <p style="opacity:.9;margin:0;">We become your product team end to end — build, operate, and help you raise, in exchange for a reduced fee and equity.</p>
+        <ul class="feat">
+          <li>Dedicated senior team</li>
+          <li>Build → operate → raise</li>
+          <li>Investor introductions included</li>
+        </ul>
+      </article>
+      <article class="card reveal" data-delay="200">
+        <h3>Managed retainer</h3>
+        <div class="price">From $4k/mo</div>
+        <p style="opacity:.82;margin:0;">For live products — we run the infrastructure, support, and continuous improvement month to month.</p>
+        <ul class="feat">
+          <li>Managed IT &amp; support</li>
+          <li>Security &amp; monitoring</li>
+          <li>Roadmap of improvements</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section--tight bg-paper">
+  <div class="container">
+    <div class="cta-band dots reveal" style="color:#fff;">
+      <div style="position:relative;">
+        <h2 class="title" style="max-width:20ch;margin-inline:auto;">Not sure which one you need?</h2>
+        <p class="lead" style="max-width:46ch;margin:18px auto 0;color:#fff;opacity:.95;">Tell us about the idea and we'll recommend the right starting point — no pressure, no jargon.</p>
+        <div class="row" style="justify-content:center;margin-top:30px;">
+          <a href="Contact.html" class="btn btn-ink">Pitch your idea <span class="arr">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer" data-screen-label="Footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <div class="footer-logo"><img src="assets/logo-cream.png" alt="Macroshifts"></div>
+        <p style="opacity:.7;max-width:30ch;">The venture studio that turns founders' ideas into funded companies.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="Home.html">Home</a><a href="About.html">About</a><a href="Services.html">Services</a><a href="Contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="Services.html">Websites &amp; apps</a><a href="Services.html">SEO &amp; digital growth</a><a href="Services.html">Strategy &amp; consulting</a><a href="Services.html">Managed IT</a><a href="Services.html">Investment support</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <a href="Contact.html">hello@macroshifts.com</a><a href="Contact.html">Book a call</a><a href="#">LinkedIn</a><a href="#">X / Twitter</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Macroshifts. All rights reserved.</span>
+      <span>From idea to enterprise.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
