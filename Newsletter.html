@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newsletter — Field notes from the studio | Macroshifts</title>
+<meta name="description" content="Macroshifts' newsletter and field notes: SEO, product strategy, fundraising, and operating playbooks from a venture studio that builds the products it backs.">
+<link rel="stylesheet" href="assets/brand.css">
+<style>
+  .page-hero { background: var(--royal); color: var(--cream); padding: clamp(64px,8vw,120px) 0 clamp(56px,7vw,90px); }
+  .page-hero .display { color: var(--cream); }
+  .page-hero .serif { color: var(--coral); }
+
+  /* signup band */
+  .signup { background: var(--cream-2); padding: clamp(36px,5vw,56px); border-radius: var(--r-lg); display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; position: relative; overflow: hidden; }
+  .signup::before { content: ""; position: absolute; right: -80px; bottom: -120px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, rgba(255,106,69,.35), transparent 60%); pointer-events: none; }
+  @media (max-width: 820px) { .signup { grid-template-columns: 1fr; padding: 32px; } }
+  .signup h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); margin-bottom: 10px; }
+  .signup p { opacity: .82; margin: 0; max-width: 42ch; }
+  .signup form { display: flex; gap: 10px; position: relative; z-index: 2; }
+  @media (max-width: 520px) { .signup form { flex-direction: column; } }
+  .signup input { flex: 1; border: 1.5px solid var(--line); border-radius: var(--r-pill); padding: 14px 22px; font-family: var(--font-body); font-size: 1rem; background: #fff; color: var(--ink); }
+  .signup input:focus { outline: none; border-color: var(--coral); box-shadow: 0 0 0 4px rgba(255,106,69,.12); }
+  .signup .fine { font-size: .82rem; opacity: .6; margin-top: 14px; }
+
+  /* featured article */
+  .featured { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; }
+  @media (max-width: 920px) { .featured { grid-template-columns: 1fr; gap: 28px; } }
+  .featured .vis { aspect-ratio: 5/4; border-radius: var(--r-lg); }
+  .featured h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); margin: 14px 0 16px; }
+  .featured .meta { display: flex; gap: 14px; flex-wrap: wrap; font-family: var(--font-display); font-size: .86rem; letter-spacing: .04em; }
+  .featured .meta .pill { padding: 5px 14px; border-radius: var(--r-pill); background: rgba(255,106,69,.13); color: var(--coral-700); border: 0; }
+  .featured .meta .dot { opacity: .5; }
+  .featured .read { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 600; color: var(--coral); margin-top: 16px; }
+
+  /* category bar */
+  .cat-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
+  .cat-bar button { font-family: var(--font-display); font-weight: 500; font-size: .92rem; padding: 9px 18px; border-radius: var(--r-pill); border: 1.5px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; transition: .15s; }
+  .cat-bar button:hover { border-color: var(--ink); }
+  .cat-bar button.on { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+
+  /* article grid */
+  .articles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  @media (max-width: 920px) { .articles { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 620px) { .articles { grid-template-columns: 1fr; } }
+  .article { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; transition: .25s; display: flex; flex-direction: column; }
+  .article:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: transparent; }
+  .article .vis { aspect-ratio: 16/10; }
+  .article .body { padding: 22px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .article .meta { display: flex; gap: 12px; align-items: center; font-family: var(--font-display); font-size: .8rem; opacity: .7; letter-spacing: .04em; }
+  .article .cat { color: var(--coral); font-weight: 600; text-transform: uppercase; letter-spacing: .12em; }
+  .article h3 { font-size: 1.15rem; line-height: 1.2; }
+  .article p { margin: 0; font-size: .95rem; opacity: .8; }
+  .article .foot { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 6px; font-size: .85rem; opacity: .7; }
+  .article .foot .arr { color: var(--coral); }
+
+  /* monthly digest */
+  .digest { background: var(--royal); color: var(--cream); border-radius: var(--r-lg); padding: clamp(40px,5vw,72px); display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  @media (max-width: 820px) { .digest { grid-template-columns: 1fr; } }
+  .digest h2 { color: var(--cream); font-size: clamp(1.8rem, 3vw, 2.4rem); }
+  .digest p { opacity: .85; margin-top: 12px; }
+  .digest .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .digest .stats .v { font-family: var(--font-display); font-weight: 700; font-size: 2.4rem; color: var(--coral); letter-spacing: -.03em; line-height: 1; }
+  .digest .stats .l { opacity: .75; font-size: .92rem; margin-top: 6px; }
+</style>
+</head>
+<body>
+
+<header class="nav" data-screen-label="Newsletter nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="Home.html" aria-label="Macroshifts home"><img src="assets/logo-navy.png" alt="Macroshifts"></a>
+    <nav class="nav-links">
+      <a href="Home.html">Home</a>
+      <a href="Services.html">Services</a>
+      <a href="About.html">About</a>
+      <a href="Careers.html">Careers</a>
+      <a href="Newsletter.html" class="active">Newsletter</a>
+      <a href="Contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="Contact.html" class="btn btn-primary">Pitch your idea <span class="arr">→</span></a>
+      <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="page-hero" data-screen-label="Newsletter hero">
+  <div class="container">
+    <span class="eyebrow reveal" style="opacity:.85;">Newsletter &amp; field notes</span>
+    <h1 class="display reveal" data-delay="60" style="margin-top:20px;max-width:20ch;">What we learn, written for the next <span class="serif">founder.</span></h1>
+    <p class="lead measure reveal" data-delay="140" style="margin-top:24px;max-width:60ch;opacity:.85;">Every product we ship leaves us with a notebook of what worked and what didn't. We turn the best of it into a monthly newsletter and a feed of practical, search-friendly essays on building, growing, and raising.</p>
+  </div>
+</section>
+
+<!-- SIGNUP -->
+<section class="section bg-cream">
+  <div class="container">
+    <div class="signup reveal">
+      <div>
+        <span class="eyebrow">Monthly newsletter</span>
+        <h2 style="margin-top:14px;">One email. First Tuesday of the month.</h2>
+        <p>Three pieces of writing from the studio, one playbook we used last month, and one founder we backed worth knowing about. No fluff, no funnels, never sold.</p>
+        <p class="fine">Used by 8,400+ founders, operators &amp; investors. Unsubscribe in one click.</p>
+      </div>
+      <form id="subForm">
+        <input type="email" name="email" placeholder="founder@yourcompany.com" required>
+        <button type="submit" class="btn btn-primary">Subscribe <span class="arr">→</span></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED ARTICLE -->
+<section class="section bg-cream2">
+  <div class="container">
+    <div class="featured">
+      <div class="vis art art--orbit reveal"></div>
+      <div class="reveal" data-delay="100">
+        <span class="eyebrow">Latest essay</span>
+        <h2>The 14-day idea test: how to validate a SaaS concept before you build it</h2>
+        <p style="opacity:.86;">Most founders waste the first sprint building the wrong thing. Here's the two-week framework we run inside the studio: customer calls, landing page, paid signal, and the kill-or-keep criteria we agree before we start.</p>
+        <div class="meta">
+          <span class="pill">Strategy</span>
+          <span>Sofia Reyes</span>
+          <span class="dot">·</span>
+          <span>12 min read</span>
+          <span class="dot">·</span>
+          <span>28 May 2026</span>
+        </div>
+        <a href="#" class="read">Read the essay <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE GRID -->
+<section class="section bg-cream">
+  <div class="container">
+    <div class="row reveal" style="justify-content: space-between; align-items: flex-end; margin-bottom: 30px;">
+      <div>
+        <span class="eyebrow">Field notes</span>
+        <h2 class="title" style="margin-top: 16px;">Practical essays, ranked by what we'd open first.</h2>
+      </div>
+    </div>
+
+    <div class="cat-bar reveal">
+      <button class="on" data-cat="all">All</button>
+      <button data-cat="seo">SEO &amp; growth</button>
+      <button data-cat="build">Build</button>
+      <button data-cat="strategy">Strategy</button>
+      <button data-cat="raise">Fundraising</button>
+      <button data-cat="ops">Operate</button>
+    </div>
+
+    <div class="articles">
+      <a href="#" class="article reveal" data-cat="seo">
+        <div class="vis art art--bars"></div>
+        <div class="body">
+          <div class="meta"><span class="cat">SEO &amp; growth</span><span>·</span><span>9 min</span></div>
+          <h3>Programmatic SEO for early-stage SaaS: what works in 2026</h3>
+          <p>The state of programmatic SEO has changed twice in 18 months. Here's the template we use for our portfolio companies — and what we stopped doing in Q1.</p>
+          <div class="foot"><span>22 May 2026</span><span class="arr">→</span></div>
+        </div>
+      </a>
+
+      <a href="#" class="article reveal" data-cat="raise" data-delay="80">
+        <div class="vis art art--field"></div>
+        <div class="body">
+          <div class="meta"><span class="cat">Fundraising</span><span>·</span><span>14 min</span></div>
+          <h3>The pre-seed deck that landed three term sheets in two weeks</h3>
+          <p>An eleven-slide deck, annotated. What every slide is doing, what we cut, and how we reframed the market slide after the second investor passed.</p>
+          <div class="foot"><span>18 May 2026</span><span class="arr">→</span></div>
+        </div>
+      </a>
+
+      <a href="#" class="article reveal" data-cat="build" data-delay="160">
+        <div class="vis art art--arcs"></div>
+        <div class="body">
+          <div class="meta"><span class="cat">Build</span><span>·</span><span>7 min</span></div>
+          <h3>Shipping with one engineer: an honest stack for the first 90 days</h3>
+          <p>Boring tech, opinionated defaults, and the four decisions you should make once and never revisit. The lean stack we put behind every studio sprint.</p>
+          <div class="foot"><span>11 May 2026</span><span class="arr">→</span></div>
+        </div>
+      </a>
+
+      <a href="#" class="article reveal" data-cat="strategy">
+        <div class="vis art art--grid"></div>
+        <div class="body">
+          <div class="meta"><span class="cat">Strategy</span><span>·</span><span>10 min</span></div>
+          <h3>How to know if your idea has a wedge — before you raise a penny</h3>
+          <p>Three questions we ask every founder at the first call. If you can't answer all three, you're not ready to raise. (You are ready to ship a prototype.)</p>
+          <div class="foot"><span>04 May 2026</span><span class="arr">→</span></div>
+        </div>
+      </a>
+
+      <a href="#" class="article reveal" data-cat="seo" data-delay="80">
+        <div class="vis art art--orbit"></div>
+        <div class="body">
+          <div class="meta"><span class="cat">SEO &amp; growth</span><span>·</span><span>11 min</span></div>
+          <h3>Content velocity vs. content depth: the trade-off we've been getting wrong</h3>
+          <p>We ran a six-month split test across four portfolio sites. The result reset how we plan editorial calendars — and most playbooks online are still wrong.</p>
+          <div class="foot"><span>27 Apr 2026</span><span class="arr">→</span></div>
+        </div>
+      </a>
+
+      <a href="#" class="article reveal" data-cat="ops" data-delay="160">
+        <div class="vis art art--field"></div>
+        <div class="body">
+          <div class="meta"><span class="cat">Operate</span><span>·</span><span>8 min</span></div>
+          <h3>SOC 2 readiness on a startup budget — without slowing the team down</h3>
+          <p>The minimum-viable controls map we use to get a portfolio company audit-ready in 60 days, with concrete tooling and exactly what to skip.</p>
+          <div class="foot"><span>20 Apr 2026</span><span class="arr">→</span></div>
+        </div>
+      </a>
+
+      <a href="#" class="article reveal" data-cat="raise">
+        <div class="vis art art--arcs"></div>
+        <div class="body">
+          <div class="meta"><span class="cat">Fundraising</span><span>·</span><span>13 min</span></div>
+          <h3>Inside our investor list: how we route warm intros for portfolio companies</h3>
+          <p>The seven-column spreadsheet we update every Monday, the criteria for what counts as warm, and why we stopped pitching certain funds entirely.</p>
+          <div class="foot"><span>14 Apr 2026</span><span class="arr">→</span></div>
+        </div>
+      </a>
+
+      <a href="#" class="article reveal" data-cat="build" data-delay="80">
+        <div class="vis art art--bars"></div>
+        <div class="body">
+          <div class="meta"><span class="cat">Build</span><span>·</span><span>9 min</span></div>
+          <h3>Designing for retention from week one: the loops we build in by default</h3>
+          <p>A specification you can hand to a designer for the first ten product loops. Nothing fancy — but every portfolio product ships with them now.</p>
+          <div class="foot"><span>07 Apr 2026</span><span class="arr">→</span></div>
+        </div>
+      </a>
+
+      <a href="#" class="article reveal" data-cat="strategy" data-delay="160">
+        <div class="vis art art--grid"></div>
+        <div class="body">
+          <div class="meta"><span class="cat">Strategy</span><span>·</span><span>12 min</span></div>
+          <h3>From rough idea to first paying customer in 60 days: a real sprint, annotated</h3>
+          <p>The week-by-week log from one of our 2026 sprints. What we cut, what we shipped, the metric we agreed on, and where we got the first revenue.</p>
+          <div class="foot"><span>31 Mar 2026</span><span class="arr">→</span></div>
+        </div>
+      </a>
+    </div>
+
+    <div class="row reveal" style="justify-content: center; margin-top: 48px;">
+      <a href="#" class="btn btn-outline on-light">Load more essays <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- DIGEST -->
+<section class="section bg-paper">
+  <div class="container">
+    <div class="digest reveal">
+      <div>
+        <span class="eyebrow" style="opacity: .85;">The monthly digest</span>
+        <h2 style="margin-top: 16px;">A studio's worth of writing, summarised in one read.</h2>
+        <p>If you only have ten minutes a month for founder reading, this is the email we'd send you. Curated by the studio's senior team, never automated.</p>
+      </div>
+      <div class="stats">
+        <div><div class="v">8,400+</div><div class="l">Founders, operators &amp; investors subscribed</div></div>
+        <div><div class="v">62%</div><div class="l">Open rate (six-month average)</div></div>
+        <div><div class="v">22</div><div class="l">Issues sent since launch</div></div>
+        <div><div class="v">0</div><div class="l">Spam, sponsorships, or sold lists</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer" data-screen-label="Footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <div class="footer-logo"><img src="assets/logo-cream.png" alt="Macroshifts"></div>
+        <p style="opacity:.7;max-width:30ch;">The venture studio that turns founders' ideas into funded companies.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="Home.html">Home</a><a href="About.html">About</a><a href="Services.html">Services</a><a href="Careers.html">Careers</a><a href="Newsletter.html">Newsletter</a><a href="Compliance.html">Compliance</a><a href="Contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="Services.html">Websites &amp; apps</a><a href="Services.html">SEO &amp; digital growth</a><a href="Services.html">Strategy &amp; consulting</a><a href="Services.html">Managed IT</a><a href="Services.html">Investment support</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <a href="Contact.html">hello@macroshifts.com</a><a href="Contact.html">Book a call</a><a href="#">LinkedIn</a><a href="#">X / Twitter</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Macroshifts. All rights reserved.</span>
+      <span>From idea to enterprise.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>
+  // category filter
+  (function(){
+    var buttons = document.querySelectorAll('.cat-bar button');
+    var articles = document.querySelectorAll('.article');
+    buttons.forEach(function(b){
+      b.addEventListener('click', function(){
+        buttons.forEach(function(x){ x.classList.remove('on'); });
+        b.classList.add('on');
+        var cat = b.getAttribute('data-cat');
+        articles.forEach(function(a){
+          if(cat === 'all' || a.getAttribute('data-cat') === cat){ a.style.display = ''; }
+          else { a.style.display = 'none'; }
+        });
+      });
+    });
+  })();
+  // subscribe form
+  (function(){
+    var form = document.getElementById('subForm');
+    if(!form) return;
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var input = form.querySelector('input[name="email"]');
+      if(!input.value.trim()){ input.style.borderColor = 'var(--coral)'; return; }
+      form.innerHTML = '<div style="font-family:var(--font-display);font-weight:600;color:var(--royal);padding:14px 22px;">Welcome aboard — check your inbox for a confirmation email.</div>';
+    });
+  })();
+</script>
+</body>
+</html>

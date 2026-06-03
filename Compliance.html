@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compliance — Macroshifts</title>
+<meta name="description" content="How Macroshifts treats your idea: NDAs, terms of engagement, IP ownership, data protection, security posture, and KYC/AML for our venture studio work.">
+<link rel="stylesheet" href="assets/brand.css">
+<style>
+  .page-hero { background: var(--royal); color: var(--cream); padding: clamp(64px,8vw,120px) 0 clamp(56px,7vw,90px); }
+  .page-hero .display { color: var(--cream); }
+  .page-hero .serif { color: var(--coral); }
+
+  .legal-grid { display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: flex-start; }
+  @media (max-width: 920px) { .legal-grid { grid-template-columns: 1fr; gap: 28px; } }
+
+  .legal-side { position: sticky; top: 100px; }
+  @media (max-width: 920px) { .legal-side { position: static; } }
+  .legal-side h4 { font-family: var(--font-display); font-size: .8rem; text-transform: uppercase; letter-spacing: .16em; opacity: .55; margin: 0 0 18px; font-weight: 600; }
+  .legal-side ol { list-style: none; padding: 0; margin: 0; counter-reset: l; }
+  .legal-side li { counter-increment: l; padding: 10px 0; border-top: 1px solid var(--line); }
+  .legal-side li:first-child { border-top: none; }
+  .legal-side a { display: flex; gap: 14px; opacity: .82; font-family: var(--font-display); font-weight: 500; font-size: .96rem; }
+  .legal-side a::before { content: counter(l, decimal-leading-zero); color: var(--coral); font-weight: 700; min-width: 26px; }
+  .legal-side a:hover { opacity: 1; color: var(--coral); }
+
+  .legal-block { padding: 0 0 56px; border-bottom: 1px solid var(--line); }
+  .legal-block:last-child { border-bottom: none; padding-bottom: 0; }
+  .legal-block + .legal-block { padding-top: 56px; }
+  .legal-block h2 { font-size: clamp(1.6rem, 2.4vw, 2.1rem); margin: 14px 0 18px; }
+  .legal-block p { opacity: .86; }
+  .legal-block ul { padding-left: 22px; margin: 14px 0; }
+  .legal-block ul li { padding: 5px 0; opacity: .86; }
+  .legal-block ul li strong { color: var(--ink); opacity: 1; }
+
+  .principles { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 26px; }
+  @media (max-width: 860px) { .principles { grid-template-columns: 1fr; } }
+  .principle { padding: 22px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-md); }
+  .principle .ic { width: 42px; height: 42px; border-radius: 10px; background: rgba(255,106,69,.12); color: var(--coral); display:grid; place-items:center; font-family: var(--font-display); font-weight: 700; font-size: 1rem; margin-bottom: 14px; }
+  .principle h3 { font-size: 1.04rem; margin-bottom: 8px; }
+  .principle p { font-size: .92rem; opacity: .8; margin: 0; }
+
+  .docs { display:grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 22px; }
+  @media (max-width: 720px){ .docs { grid-template-columns: 1fr; } }
+  .doc { display:flex; gap:14px; align-items:center; padding: 16px 20px; background: var(--paper); border:1px solid var(--line); border-radius: var(--r-md); transition: .18s; }
+  .doc:hover { transform: translateY(-3px); border-color: var(--coral); box-shadow: var(--shadow-sm); }
+  .doc .dc { width: 44px; height: 44px; background: var(--royal); color: var(--cream); border-radius: 10px; display:grid; place-items:center; font-family: var(--font-display); font-weight:700; font-size: .78rem; flex:none; letter-spacing: .04em; }
+  .doc strong { font-family: var(--font-display); display:block; margin-bottom:3px; }
+  .doc span { opacity: .58; font-size: .88rem; }
+</style>
+</head>
+<body>
+
+<header class="nav" data-screen-label="Compliance nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="Home.html" aria-label="Macroshifts home"><img src="assets/logo-navy.png" alt="Macroshifts"></a>
+    <nav class="nav-links">
+      <a href="Home.html">Home</a>
+      <a href="Services.html">Services</a>
+      <a href="About.html">About</a>
+      <a href="Careers.html">Careers</a>
+      <a href="Newsletter.html">Newsletter</a>
+      <a href="Contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="Contact.html" class="btn btn-primary">Pitch your idea <span class="arr">→</span></a>
+      <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="page-hero" data-screen-label="Compliance hero">
+  <div class="container">
+    <span class="eyebrow reveal" style="opacity:.85;">Compliance &amp; legal</span>
+    <h1 class="display reveal" data-delay="60" style="margin-top:20px;max-width:20ch;">Built so your idea stays <span class="serif">yours.</span></h1>
+    <p class="lead measure reveal" data-delay="140" style="margin-top:24px;max-width:60ch;opacity:.85;">Founders trust us with the rough idea long before it's defensible. Here's exactly how we handle what you share — the NDAs, the contracts, the IP, the security posture, and the policies that keep your concept safe at every step.</p>
+  </div>
+</section>
+
+<section class="section bg-cream">
+  <div class="container">
+    <div class="legal-grid">
+      <aside class="legal-side reveal">
+        <h4>On this page</h4>
+        <ol>
+          <li><a href="#confidentiality">Confidentiality &amp; NDAs</a></li>
+          <li><a href="#terms">Terms of engagement</a></li>
+          <li><a href="#ip">Intellectual property</a></li>
+          <li><a href="#privacy">Data protection &amp; privacy</a></li>
+          <li><a href="#security">Security posture</a></li>
+          <li><a href="#aml">KYC / AML &amp; investment</a></li>
+          <li><a href="#documents">Documents</a></li>
+        </ol>
+      </aside>
+
+      <div>
+        <div class="legal-block reveal" id="confidentiality">
+          <span class="eyebrow">01 — Confidentiality</span>
+          <h2>Your idea is confidential the moment you mention it.</h2>
+          <p>From the first email through to a fully signed engagement, everything you share with Macroshifts is treated as confidential by default. You don't need an NDA in place before you pitch us — but we'll happily sign yours, and we'll send ours if you'd prefer to start with ours.</p>
+          <ul>
+            <li>Mutual NDA available on request — usually returned signed within 24 hours</li>
+            <li>Internal access to your project is limited to the named team on your engagement</li>
+            <li>Pitches and decks shared with us are never used to build competing products</li>
+            <li>Investor introductions are only made with your explicit, written approval</li>
+            <li>Confidentiality survives the engagement by five years from termination</li>
+          </ul>
+          <div class="principles">
+            <div class="principle"><div class="ic">N</div><h3>Mutual NDA</h3><p>Two-way confidentiality from day one. A five-year tail period applies after the engagement ends.</p></div>
+            <div class="principle"><div class="ic">L</div><h3>Least access</h3><p>Only the studio team actively working on your build can see your materials. No shared client folders.</p></div>
+            <div class="principle"><div class="ic">C</div><h3>Clean exit</h3><p>If we don't take the engagement, your materials are deleted from our systems within 14 days.</p></div>
+          </div>
+        </div>
+
+        <div class="legal-block reveal" id="terms">
+          <span class="eyebrow">02 — Terms of engagement</span>
+          <h2>Plain-language terms for every engagement.</h2>
+          <p>Every engagement — sprint, studio partner, or managed retainer — comes with a short master services agreement (MSA) and a statement of work (SOW) that spells out scope, timeline, deliverables, and fee. No surprises buried in legalese.</p>
+          <ul>
+            <li><strong>Scope:</strong> the SOW lists exactly what we'll deliver and what we won't</li>
+            <li><strong>Payment:</strong> net-14 on monthly invoices; 50% deposit for sprint engagements</li>
+            <li><strong>Change orders:</strong> anything outside the SOW gets a written change order before work starts</li>
+            <li><strong>Termination:</strong> either side can end an engagement with 30 days' written notice</li>
+            <li><strong>Warranty:</strong> 60-day warranty on shipped deliverables for material defects</li>
+            <li><strong>Liability:</strong> capped at fees paid in the prior twelve months</li>
+            <li><strong>Governing law:</strong> England &amp; Wales unless your jurisdiction is named in the SOW</li>
+          </ul>
+        </div>
+
+        <div class="legal-block reveal" id="ip">
+          <span class="eyebrow">03 — Intellectual property</span>
+          <h2>You own what we build for you.</h2>
+          <p>On final payment, all intellectual property created specifically for your project — code, designs, copy, brand assets, and documentation — transfers to you. We retain rights only to background IP that existed before the engagement (frameworks, internal libraries, methodologies) and grant you a perpetual licence to use it within the deliverable.</p>
+          <ul>
+            <li>Full assignment of foreground IP on receipt of final payment</li>
+            <li>Perpetual, royalty-free licence to background IP we used in your build</li>
+            <li>Open-source components remain under their original licences and are disclosed in writing</li>
+            <li>Right to reference your engagement in our portfolio with your logo and a short summary — unless you opt out in the SOW</li>
+            <li>Source-code escrow available on request for retainer engagements</li>
+          </ul>
+        </div>
+
+        <div class="legal-block reveal" id="privacy">
+          <span class="eyebrow">04 — Data protection &amp; privacy</span>
+          <h2>GDPR, UK GDPR, and CCPA aligned.</h2>
+          <p>We act as a data processor when handling personal data on your behalf, and as a data controller for the information you submit to us directly (contact forms, pitches, contracts). Either way, we collect only what we need and we delete it when we no longer do.</p>
+          <ul>
+            <li>Data processing addendum (DPA) signed alongside the MSA when personal data is involved</li>
+            <li>Sub-processors disclosed in writing; 30 days' notice of any addition or change</li>
+            <li>Data subject access requests (DSARs) routed within the statutory 30-day window</li>
+            <li>Pitch and contact data deleted after 24 months of account inactivity</li>
+            <li>No marketing emails without explicit opt-in; one-click unsubscribe on every send</li>
+            <li>Data hosted in EU / UK regions by default; other regions disclosed in the DPA</li>
+          </ul>
+        </div>
+
+        <div class="legal-block reveal" id="security">
+          <span class="eyebrow">05 — Security posture</span>
+          <h2>A security posture that scales with you.</h2>
+          <p>For products we build and operate, security is a first-class concern from day one — not a Phase 2 chore. We follow the OWASP Top 10, ISO 27001 control families, and SOC 2 readiness practices for everything we ship and manage.</p>
+          <ul>
+            <li>Single sign-on (SSO) and 2FA mandatory on all internal tooling</li>
+            <li>Encrypted storage at rest, TLS 1.2+ in transit, secrets vaulted (never in source)</li>
+            <li>Quarterly access reviews; immediate credential revocation on offboarding</li>
+            <li>Penetration testing available as a paid add-on prior to launch</li>
+            <li>Incident response within 4 hours of detection on managed engagements</li>
+            <li>Annual third-party security audit; summary available under NDA</li>
+          </ul>
+        </div>
+
+        <div class="legal-block reveal" id="aml">
+          <span class="eyebrow">06 — KYC / AML</span>
+          <h2>Investment support, done properly.</h2>
+          <p>When we facilitate warm introductions to investors or take an equity stake ourselves, we follow KYC and AML procedures aligned with FATF guidance. Founders verify identity and entity standing; we retain records securely for the period required by law.</p>
+          <ul>
+            <li>Identity verification for all individuals receiving equity-linked introductions</li>
+            <li>Entity verification (registration, beneficial ownership) prior to any term-sheet work</li>
+            <li>Sanctions and PEP screening before introductions to regulated funds</li>
+            <li>No engagement with sanctioned jurisdictions or prohibited industries</li>
+            <li>Equity allocations documented in a side letter, reviewed by your counsel</li>
+          </ul>
+        </div>
+
+        <div class="legal-block reveal" id="documents">
+          <span class="eyebrow">07 — Documents</span>
+          <h2>Templates &amp; downloads.</h2>
+          <p>The current versions of our standard agreements. Request a copy from the studio for the exact draft we'd put in front of you — every engagement starts with a tailored set.</p>
+          <div class="docs">
+            <a class="doc" href="Contact.html"><div class="dc">NDA</div><div><strong>Mutual NDA</strong><span>v3.1 · last updated Mar 2026</span></div></a>
+            <a class="doc" href="Contact.html"><div class="dc">MSA</div><div><strong>Master Services Agreement</strong><span>v4.0 · last updated Mar 2026</span></div></a>
+            <a class="doc" href="Contact.html"><div class="dc">DPA</div><div><strong>Data Processing Addendum</strong><span>v2.2 · last updated Feb 2026</span></div></a>
+            <a class="doc" href="Contact.html"><div class="dc">SOW</div><div><strong>Statement of Work template</strong><span>v1.4 · last updated Jan 2026</span></div></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section--tight bg-paper">
+  <div class="container">
+    <div class="cta-band dots reveal" style="color:#fff;">
+      <div style="position:relative;">
+        <h2 class="title" style="max-width:24ch;margin-inline:auto;">Have a compliance or legal question before we start?</h2>
+        <p class="lead" style="max-width:46ch;margin:18px auto 0;color:#fff;opacity:.95;">Our legal lead replies to compliance questions within one business day — no engagement required.</p>
+        <div class="row" style="justify-content:center;margin-top:30px;">
+          <a href="Contact.html" class="btn btn-ink">Ask the studio <span class="arr">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer" data-screen-label="Footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <div class="footer-logo"><img src="assets/logo-cream.png" alt="Macroshifts"></div>
+        <p style="opacity:.7;max-width:30ch;">The venture studio that turns founders' ideas into funded companies.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="Home.html">Home</a><a href="About.html">About</a><a href="Services.html">Services</a><a href="Careers.html">Careers</a><a href="Newsletter.html">Newsletter</a><a href="Compliance.html">Compliance</a><a href="Contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="Services.html">Websites &amp; apps</a><a href="Services.html">SEO &amp; digital growth</a><a href="Services.html">Strategy &amp; consulting</a><a href="Services.html">Managed IT</a><a href="Services.html">Investment support</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <a href="Contact.html">hello@macroshifts.com</a><a href="Contact.html">Book a call</a><a href="#">LinkedIn</a><a href="#">X / Twitter</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Macroshifts. All rights reserved.</span>
+      <span>From idea to enterprise.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers — Macroshifts</title>
+<meta name="description" content="Open roles at Macroshifts — the venture studio that builds, backs, and runs early-stage products. Engineering, design, growth, content, and investment positions.">
+<link rel="stylesheet" href="assets/brand.css">
+<style>
+  .page-hero { background: var(--royal); color: var(--cream); padding: clamp(64px,8vw,120px) 0 clamp(56px,7vw,90px); }
+  .page-hero .display { color: var(--cream); }
+  .page-hero .serif { color: var(--coral); }
+
+  .pulse-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--line-light); }
+  @media (max-width: 760px) { .pulse-stats { grid-template-columns: repeat(2, 1fr); } }
+  .pulse-stats .ps .v { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--cream); letter-spacing: -.03em; }
+  .pulse-stats .ps .l { opacity: .72; font-size: .92rem; margin-top: 4px; }
+
+  /* department filter */
+  .dept-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+  .dept-bar button { font-family: var(--font-display); font-weight: 500; font-size: .92rem; padding: 9px 18px; border-radius: var(--r-pill); border: 1.5px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; transition: .15s; }
+  .dept-bar button:hover { border-color: var(--ink); }
+  .dept-bar button.on { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+
+  /* roles grid */
+  .roles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  @media (max-width: 820px) { .roles { grid-template-columns: 1fr; } }
+  .role { display: grid; grid-template-columns: 1fr auto; gap: 22px; align-items: center; padding: 26px 28px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-md); transition: .2s; }
+  .role:hover { transform: translateY(-3px); border-color: var(--coral); box-shadow: var(--shadow-sm); }
+  .role .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .role .tag { font-family: var(--font-display); font-size: .78rem; letter-spacing: .04em; padding: 5px 11px; border-radius: var(--r-pill); background: var(--cream-2); color: var(--ink); }
+  .role .tag.coral { background: rgba(255,106,69,.13); color: var(--coral-700); }
+  .role h3 { font-size: 1.18rem; margin-bottom: 4px; }
+  .role .dep { font-family: var(--font-display); font-size: .82rem; letter-spacing: .14em; text-transform: uppercase; opacity: .55; }
+  .role .go { width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--line); display: grid; place-items: center; color: var(--ink); transition: .18s; flex: none; }
+  .role:hover .go { background: var(--coral); border-color: var(--coral); color: #fff; transform: rotate(-45deg); }
+
+  /* perks */
+  .perks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  @media (max-width: 860px) { .perks { grid-template-columns: 1fr; } }
+  .perk { padding: 28px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-md); }
+  .perk .ic { width: 48px; height: 48px; border-radius: 12px; background: var(--royal); color: var(--cream); display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; margin-bottom: 18px; }
+  .perk h3 { font-size: 1.1rem; margin-bottom: 8px; }
+  .perk p { margin: 0; opacity: .82; font-size: .96rem; }
+
+  /* hiring process */
+  .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  @media (max-width: 860px) { .process { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .process { grid-template-columns: 1fr; } }
+  .step { position: relative; padding: 28px; border-radius: var(--r-md); background: rgba(246,239,226,.06); border: 1px solid var(--line-light); }
+  .step .n { font-family: var(--font-display); font-weight: 700; color: var(--coral); font-size: 2rem; line-height: 1; margin-bottom: 14px; }
+  .step h3 { color: var(--cream); margin-bottom: 8px; font-size: 1.05rem; }
+  .step p { margin: 0; opacity: .76; font-size: .94rem; }
+  .step .when { display: inline-block; margin-top: 12px; padding: 4px 10px; border-radius: var(--r-pill); background: rgba(255,106,69,.16); color: var(--coral); font-family: var(--font-display); font-size: .76rem; font-weight: 600; letter-spacing: .08em; }
+</style>
+</head>
+<body>
+
+<header class="nav" data-screen-label="Careers nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="Home.html" aria-label="Macroshifts home"><img src="assets/logo-navy.png" alt="Macroshifts"></a>
+    <nav class="nav-links">
+      <a href="Home.html">Home</a>
+      <a href="Services.html">Services</a>
+      <a href="About.html">About</a>
+      <a href="Careers.html" class="active">Careers</a>
+      <a href="Newsletter.html">Newsletter</a>
+      <a href="Contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="Contact.html" class="btn btn-primary">Pitch your idea <span class="arr">→</span></a>
+      <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="page-hero" data-screen-label="Careers hero">
+  <div class="container">
+    <span class="eyebrow reveal" style="opacity:.85;">Careers</span>
+    <h1 class="display reveal" data-delay="60" style="margin-top:20px;max-width:18ch;">Build the products. Back the <span class="serif">founders.</span></h1>
+    <p class="lead measure reveal" data-delay="140" style="margin-top:24px;max-width:60ch;opacity:.85;">Macroshifts hires people who could be running their own thing — and choose to build inside a studio because it's where ten ideas at once is possible. Senior hands only, real ownership, equity in what we ship.</p>
+    <div class="pulse-stats reveal" data-delay="220">
+      <div class="ps"><div class="v">42</div><div class="l">People in the studio</div></div>
+      <div class="ps"><div class="v">11</div><div class="l">Roles open today</div></div>
+      <div class="ps"><div class="v">14</div><div class="l">Time zones we cover</div></div>
+      <div class="ps"><div class="v">97%</div><div class="l">Offers accepted in 2025</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES / WHY -->
+<section class="section bg-cream">
+  <div class="container">
+    <div class="grid" style="grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: center;">
+      <div class="art art--field reveal" style="aspect-ratio: 4/5;"></div>
+      <div class="reveal" data-delay="100">
+        <span class="eyebrow">Why Macroshifts</span>
+        <h2 class="title" style="margin: 16px 0 18px;">It's the closest thing to a founder seat — without the cap table.</h2>
+        <p style="opacity:.86;">Most studios outsource the senior thinking and hand the work to a junior bench. We do the opposite. You'll plan the product, build it, ship it, and stand next to the founder when it's time to raise. Every quarter, you'll see the result of work you actually did.</p>
+        <p style="opacity:.86;">In exchange we ask for taste, ownership, and the kind of judgement that only comes from having shipped before. We don't have an "associate" tier. There's no internal politics about whose name goes on the deck. The studio is small on purpose.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPEN ROLES -->
+<section class="section bg-cream2">
+  <div class="container">
+    <div class="row reveal" style="justify-content: space-between; align-items: flex-end; margin-bottom: 32px;">
+      <div>
+        <span class="eyebrow">Open roles</span>
+        <h2 class="title" style="margin-top: 16px;">Hiring across the studio.</h2>
+      </div>
+      <a href="Contact.html" class="btn btn-outline on-light">Send a speculative CV <span class="arr">→</span></a>
+    </div>
+
+    <div class="dept-bar reveal">
+      <button class="on" data-dep="all">All roles (11)</button>
+      <button data-dep="eng">Engineering (3)</button>
+      <button data-dep="design">Design (1)</button>
+      <button data-dep="growth">Content &amp; growth (4)</button>
+      <button data-dep="studio">Studio &amp; ops (2)</button>
+      <button data-dep="invest">Investment (1)</button>
+    </div>
+
+    <div class="roles">
+      <a href="Contact.html" class="role reveal" data-dep="eng">
+        <div>
+          <div class="dep">Engineering</div>
+          <h3>Senior Full-stack Engineer</h3>
+          <div class="meta"><span class="tag coral">Lead role</span><span class="tag">Remote · EU/UK</span><span class="tag">Full-time</span></div>
+        </div>
+        <div class="go">→</div>
+      </a>
+
+      <a href="Contact.html" class="role reveal" data-dep="eng" data-delay="60">
+        <div>
+          <div class="dep">Engineering</div>
+          <h3>Cloud &amp; DevOps Engineer</h3>
+          <div class="meta"><span class="tag">Remote</span><span class="tag">AWS · Terraform · Kubernetes</span></div>
+        </div>
+        <div class="go">→</div>
+      </a>
+
+      <a href="Contact.html" class="role reveal" data-dep="eng" data-delay="120">
+        <div>
+          <div class="dep">Engineering</div>
+          <h3>AI / ML Engineer</h3>
+          <div class="meta"><span class="tag coral">New</span><span class="tag">Remote</span><span class="tag">LLM eval, RAG, agents</span></div>
+        </div>
+        <div class="go">→</div>
+      </a>
+
+      <a href="Contact.html" class="role reveal" data-dep="design" data-delay="60">
+        <div>
+          <div class="dep">Design</div>
+          <h3>Senior Product Designer</h3>
+          <div class="meta"><span class="tag">Hybrid · London</span><span class="tag">Web + mobile</span></div>
+        </div>
+        <div class="go">→</div>
+      </a>
+
+      <a href="Contact.html" class="role reveal" data-dep="growth">
+        <div>
+          <div class="dep">Content &amp; growth</div>
+          <h3>SEO Executive</h3>
+          <div class="meta"><span class="tag">Remote</span><span class="tag">Technical &amp; on-page</span></div>
+        </div>
+        <div class="go">→</div>
+      </a>
+
+      <a href="Contact.html" class="role reveal" data-dep="growth" data-delay="60">
+        <div>
+          <div class="dep">Content &amp; growth</div>
+          <h3>Senior SEO Strategist</h3>
+          <div class="meta"><span class="tag coral">Lead role</span><span class="tag">Remote</span></div>
+        </div>
+        <div class="go">→</div>
+      </a>
+
+      <a href="Contact.html" class="role reveal" data-dep="growth" data-delay="120">
+        <div>
+          <div class="dep">Content &amp; growth</div>
+          <h3>Content Editor</h3>
+          <div class="meta"><span class="tag">Remote</span><span class="tag">Long-form B2B</span></div>
+        </div>
+        <div class="go">→</div>
+      </a>
+
+      <a href="Contact.html" class="role reveal" data-dep="growth" data-delay="180">
+        <div>
+          <div class="dep">Content &amp; growth</div>
+          <h3>Research Editor</h3>
+          <div class="meta"><span class="tag">Remote</span><span class="tag">Market &amp; sector reports</span></div>
+        </div>
+        <div class="go">→</div>
+      </a>
+
+      <a href="Contact.html" class="role reveal" data-dep="studio">
+        <div>
+          <div class="dep">Studio &amp; ops</div>
+          <h3>Account Manager</h3>
+          <div class="meta"><span class="tag">Hybrid · London</span><span class="tag">2–5 yrs experience</span></div>
+        </div>
+        <div class="go">→</div>
+      </a>
+
+      <a href="Contact.html" class="role reveal" data-dep="studio" data-delay="60">
+        <div>
+          <div class="dep">Studio &amp; ops</div>
+          <h3>Technical Program Manager</h3>
+          <div class="meta"><span class="tag">Remote</span><span class="tag">Multi-project</span></div>
+        </div>
+        <div class="go">→</div>
+      </a>
+
+      <a href="Contact.html" class="role reveal" data-dep="invest">
+        <div>
+          <div class="dep">Investment</div>
+          <h3>Investment Analyst</h3>
+          <div class="meta"><span class="tag coral">New</span><span class="tag">Hybrid · London</span><span class="tag">Pre-seed &amp; seed</span></div>
+        </div>
+        <div class="go">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PERKS -->
+<section class="section bg-cream">
+  <div class="container">
+    <div class="reveal" style="margin-bottom: 40px; max-width: 50ch;">
+      <span class="eyebrow">What you get</span>
+      <h2 class="title" style="margin-top: 16px;">The studio model, applied to your career.</h2>
+    </div>
+    <div class="perks">
+      <div class="perk reveal"><div class="ic">1</div><h3>Equity in what we ship</h3><p>A studio-wide carry pool that pays out across every portfolio company we help raise.</p></div>
+      <div class="perk reveal" data-delay="60"><div class="ic">2</div><h3>Senior-only team</h3><p>No bench, no associates, no shadow billing. The people who plan are the people who build.</p></div>
+      <div class="perk reveal" data-delay="120"><div class="ic">3</div><h3>Remote-first, in real time zones</h3><p>Hubs in London and Lisbon, fully remote for the rest. We work async with a four-hour overlap.</p></div>
+      <div class="perk reveal" data-delay="180"><div class="ic">4</div><h3>Six weeks paid leave</h3><p>Plus your local public holidays, your birthday off, and a two-week sabbatical at five years.</p></div>
+      <div class="perk reveal" data-delay="240"><div class="ic">5</div><h3>Learning budget that actually works</h3><p>£2,000 a year for courses, conferences, or whatever sharpens your craft — no approvals.</p></div>
+      <div class="perk reveal" data-delay="300"><div class="ic">6</div><h3>Top-decile health cover</h3><p>Private medical, dental, vision, and mental-health support for you and your dependants.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HIRING PROCESS -->
+<section class="section bg-ink">
+  <div class="container">
+    <div class="reveal" style="margin-bottom: 44px; max-width: 50ch;">
+      <span class="eyebrow" style="opacity: .85;">How we hire</span>
+      <h2 class="title" style="color: var(--cream); margin-top: 16px;">Four steps. Two weeks. No coding gauntlets.</h2>
+      <p class="lead" style="opacity: .76; margin-top: 14px;">We respect your time. Every step has a purpose, you'll never speak to more than six people, and we tell you yes or no within 48 hours of the final conversation.</p>
+    </div>
+    <div class="process">
+      <div class="step reveal">
+        <div class="n">01</div>
+        <h3>Application review</h3>
+        <p>A real person — not a screener — reads every CV. You'll hear from us within five working days.</p>
+        <span class="when">Day 1–5</span>
+      </div>
+      <div class="step reveal" data-delay="80">
+        <div class="n">02</div>
+        <h3>Studio call</h3>
+        <p>A 45-minute conversation about the work you've shipped, why this role, and what you'd build first.</p>
+        <span class="when">Day 6–8</span>
+      </div>
+      <div class="step reveal" data-delay="160">
+        <div class="n">03</div>
+        <h3>Craft conversation</h3>
+        <p>A paid, scoped exercise reflecting real studio work — review it together with the team that'd hire you.</p>
+        <span class="when">Day 9–12</span>
+      </div>
+      <div class="step reveal" data-delay="240">
+        <div class="n">04</div>
+        <h3>Offer &amp; references</h3>
+        <p>If we're both excited, you'll have an offer within 48 hours. Two references, mutual.</p>
+        <span class="when">Day 13–14</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section--tight bg-paper">
+  <div class="container">
+    <div class="cta-band dots reveal" style="color: #fff;">
+      <div style="position: relative;">
+        <h2 class="title" style="max-width: 22ch; margin-inline: auto;">Don't see the role but want to build with us?</h2>
+        <p class="lead" style="max-width: 46ch; margin: 18px auto 0; color: #fff; opacity: .95;">Send a note with what you've shipped and what you'd want to build at Macroshifts. Speculative applications open new roles more often than you'd think.</p>
+        <div class="row" style="justify-content: center; margin-top: 30px;">
+          <a href="Contact.html" class="btn btn-ink">Send a speculative CV <span class="arr">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer" data-screen-label="Footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <div class="footer-logo"><img src="assets/logo-cream.png" alt="Macroshifts"></div>
+        <p style="opacity:.7;max-width:30ch;">The venture studio that turns founders' ideas into funded companies.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="Home.html">Home</a><a href="About.html">About</a><a href="Services.html">Services</a><a href="Careers.html">Careers</a><a href="Newsletter.html">Newsletter</a><a href="Compliance.html">Compliance</a><a href="Contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="Services.html">Websites &amp; apps</a><a href="Services.html">SEO &amp; digital growth</a><a href="Services.html">Strategy &amp; consulting</a><a href="Services.html">Managed IT</a><a href="Services.html">Investment support</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <a href="Contact.html">hello@macroshifts.com</a><a href="Contact.html">Book a call</a><a href="#">LinkedIn</a><a href="#">X / Twitter</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Macroshifts. All rights reserved.</span>
+      <span>From idea to enterprise.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+<script>
+  // department filter
+  (function(){
+    var buttons = document.querySelectorAll('.dept-bar button');
+    var roles = document.querySelectorAll('.role');
+    buttons.forEach(function(b){
+      b.addEventListener('click', function(){
+        buttons.forEach(function(x){ x.classList.remove('on'); });
+        b.classList.add('on');
+        var dep = b.getAttribute('data-dep');
+        roles.forEach(function(r){
+          if(dep === 'all' || r.getAttribute('data-dep') === dep){ r.style.display = ''; }
+          else { r.style.display = 'none'; }
+        });
+      });
+    });
+  })();
+</script>
+</body>
+</html>
