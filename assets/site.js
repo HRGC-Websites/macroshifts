@@ -179,6 +179,7 @@
         '  <p>Drop your email and we\'ll send the discount code — plus a short note on whether it\'s the right fit for what you\'re building.</p>' +
         '  <form class="season-form" novalidate>' +
         '    <input type="email" name="email" placeholder="you@yourcompany.com" required autocomplete="email">' +
+        '    <input type="tel" name="phone" placeholder="Phone number (with country code)" required autocomplete="tel" inputmode="tel">' +
         '    <button type="submit">Claim discount →</button>' +
         '  </form>' +
         '  <p class="season-fine">' + s.fine + ' One per visitor. No spam.</p>' +
@@ -229,15 +230,24 @@
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        var input = form.querySelector('input[name="email"]');
-        if (!input.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim())) {
-          input.style.borderColor = s.accent;
-          input.focus();
-          return;
-        }
+        var emailInput = form.querySelector('input[name="email"]');
+        var phoneInput = form.querySelector('input[name="phone"]');
+        var emailVal = emailInput.value.trim();
+        var phoneVal = phoneInput.value.trim();
+        var bad = false;
+        if (!emailVal || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+          emailInput.style.borderColor = s.accent; bad = true;
+        } else { emailInput.style.borderColor = ''; }
+        // Loose phone check — at least 7 digits, allow +, spaces, dashes, parens.
+        if (!phoneVal || (phoneVal.replace(/[^0-9]/g, '').length < 7)) {
+          phoneInput.style.borderColor = s.accent; bad = true;
+        } else { phoneInput.style.borderColor = ''; }
+        if (bad) { (emailInput.style.borderColor ? emailInput : phoneInput).focus(); return; }
+
         var payload = {
           name: 'Seasonal popup lead',
-          email: input.value.trim(),
+          email: emailVal,
+          phone: phoneVal,
           message: 'Requested ' + s.eyebrow + ' discount code from popup on ' + window.location.pathname,
           page: window.location.pathname,
           season: seasonKey,
@@ -304,6 +314,7 @@
         '  <form class="lead-form" novalidate>' +
         '    <label>Your name<input type="text" name="name" required autocomplete="name"></label>' +
         '    <label>Email<input type="email" name="email" required autocomplete="email"></label>' +
+        '    <label>Phone<input type="tel" name="phone" required autocomplete="tel" inputmode="tel"></label>' +
         '    <label>What are you working on?<textarea name="message" rows="3" required></textarea></label>' +
         '    <button type="submit" class="btn btn-primary">Send <span class="arr">→</span></button>' +
         '  </form>' +
@@ -346,6 +357,7 @@
         var payload = {
           name: form.name.value.trim(),
           email: form.email.value.trim(),
+          phone: form.phone.value.trim(),
           message: form.message.value.trim(),
           page: window.location.pathname,
         };

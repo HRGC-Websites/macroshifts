@@ -25,14 +25,21 @@ export default async function handler(req, res) {
   }
 
   const body = req.body || {};
-  const { name = '', email = '', message = '', page = '' } = body;
+  const { name = '', email = '', phone = '', message = '', page = '', season = '' } = body;
 
-  if (!name.trim() || !email.trim() || !message.trim()) {
+  if (!name.trim() || !email.trim() || !phone.trim() || !message.trim()) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return res.status(400).json({ error: 'Invalid email' });
   }
+  // Loose phone check — server-side mirror of the client validation.
+  if (phone.replace(/[^0-9]/g, '').length < 7) {
+    return res.status(400).json({ error: 'Invalid phone' });
+  }
+
+  // tel: links want digits + leading + only. Strip everything else.
+  const phoneHref = 'tel:' + phone.replace(/[^0-9+]/g, '');
 
   const messageHtml = escape(message).replace(/\n/g, '<br>');
   const subject = `New lead: ${name}`;
@@ -44,6 +51,8 @@ export default async function handler(req, res) {
       <table style="width:100%; border-collapse:collapse; margin-bottom:18px;">
         <tr><td style="padding:6px 0; color:#6b7280; width:100px;">Name</td><td style="padding:6px 0;"><strong>${escape(name)}</strong></td></tr>
         <tr><td style="padding:6px 0; color:#6b7280;">Email</td><td style="padding:6px 0;"><a href="mailto:${escape(email)}">${escape(email)}</a></td></tr>
+        <tr><td style="padding:6px 0; color:#6b7280;">Phone</td><td style="padding:6px 0;"><a href="${escape(phoneHref)}">${escape(phone)}</a></td></tr>
+        ${season ? `<tr><td style="padding:6px 0; color:#6b7280;">Season</td><td style="padding:6px 0;"><strong>${escape(season)}</strong> (Up to 75% OFF)</td></tr>` : ''}
       </table>
       <h3 style="margin: 16px 0 8px; font-size: 15px;">What they're working on</h3>
       <div style="padding: 14px 16px; background: #FBF7EF; border-left: 3px solid #FF6A45; border-radius: 0 8px 8px 0; line-height: 1.55;">${messageHtml}</div>
