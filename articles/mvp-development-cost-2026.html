@@ -3,30 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MVP Development Cost in 2026: A Real Founder's Budget ($8K–$80K) | Macroshifts</title>
-<meta name="description" content="What an MVP actually costs in 2026 — broken down by feature set, complexity, and timeline. Real numbers from 40+ studio builds, with a budget table and decision framework.">
-<meta name="keywords" content="MVP development cost, MVP cost 2026, startup MVP budget, how much does an MVP cost, SaaS MVP price">
-<link rel="canonical" href="https://macroshifts.com/articles/mvp-development-cost-2026.html">
+<title>MVP Development in 2026: What Actually Drives the Cost | Macroshifts</title>
+<meta name="description" content="A real founder's guide to MVP scope, complexity, and timeline. What drives an MVP build — and how to read four wildly different agency quotes for the same idea.">
+<meta name="keywords" content="MVP development, MVP scope, startup MVP, SaaS MVP, how to scope an MVP, MVP timeline">
+<link rel="canonical" href="https://macroshifts.com/articles/mvp-development-cost-2026">
 
-<!-- Open Graph / social -->
 <meta property="og:type" content="article">
-<meta property="og:title" content="MVP Development Cost in 2026: A Real Founder's Budget ($8K–$80K)">
-<meta property="og:description" content="Real numbers from 40+ studio builds: what an MVP actually costs in 2026, broken down by scope, team, and timeline.">
-<meta property="og:url" content="https://macroshifts.com/articles/mvp-development-cost-2026.html">
+<meta property="og:title" content="MVP Development in 2026: What Actually Drives the Cost">
+<meta property="og:description" content="What drives an MVP build — scope, complexity, timeline, and the team behind it. From 40+ studio engagements.">
+<meta property="og:url" content="https://macroshifts.com/articles/mvp-development-cost-2026">
 <meta property="og:image" content="https://macroshifts.com/assets/logo-mark-1024.png">
 <meta property="og:site_name" content="Macroshifts">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="MVP Development Cost in 2026 — A Real Founder's Budget">
-<meta name="twitter:description" content="Real numbers from 40+ studio builds: what an MVP actually costs in 2026.">
+<meta name="twitter:title" content="MVP Development in 2026 — What Actually Drives the Cost">
+<meta name="twitter:description" content="What drives an MVP build — scope, complexity, timeline, and the team behind it.">
 <meta name="twitter:image" content="https://macroshifts.com/assets/logo-mark-1024.png">
 
-<!-- Article schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "MVP Development Cost in 2026: A Real Founder's Budget ($8K–$80K)",
-  "description": "What an MVP actually costs in 2026 — broken down by feature set, complexity, and timeline. Real numbers from 40+ studio builds.",
+  "headline": "MVP Development in 2026: What Actually Drives the Cost",
+  "description": "A real founder's guide to MVP scope, complexity, and timeline. What drives an MVP build — and how to read four wildly different agency quotes for the same idea.",
   "image": "https://macroshifts.com/assets/logo-mark-1024.png",
   "author": { "@type": "Person", "name": "Marcus Lin", "jobTitle": "Engineering Lead, Macroshifts" },
   "publisher": {
@@ -35,8 +33,8 @@
     "logo": { "@type": "ImageObject", "url": "https://macroshifts.com/assets/logo-mark-512.png" }
   },
   "datePublished": "2026-05-29",
-  "dateModified": "2026-05-29",
-  "mainEntityOfPage": "https://macroshifts.com/articles/mvp-development-cost-2026.html"
+  "dateModified": "2026-06-04",
+  "mainEntityOfPage": "https://macroshifts.com/articles/mvp-development-cost-2026"
 }
 </script>
 
@@ -47,54 +45,39 @@
 <link rel="stylesheet" href="../assets/brand.css">
 <style>
   .page-hero { background: var(--royal); color: var(--cream); padding: clamp(56px,7vw,100px) 0 clamp(40px,5vw,72px); }
-  .page-hero .display { color: var(--cream); }
-  .page-hero .serif { color: var(--coral); }
+  .page-hero .display { color: var(--cream); } .page-hero .serif { color: var(--coral); }
   .crumbs { display:flex; gap:8px; font-family:var(--font-display); font-size:.84rem; letter-spacing:.04em; opacity:.7; margin-bottom:24px; }
-  .crumbs a { opacity:.7; } .crumbs a:hover { opacity:1; color:var(--coral); }
-  .crumbs span { opacity:.4; }
-
+  .crumbs a { opacity:.7; } .crumbs a:hover { opacity:1; color:var(--coral); } .crumbs span { opacity:.4; }
   .art-meta { display:flex; gap:18px; flex-wrap:wrap; font-family:var(--font-display); font-size:.92rem; opacity:.82; margin-top:24px; align-items:center; }
   .art-meta .pill { padding:5px 14px; border-radius:var(--r-pill); background:rgba(255,106,69,.18); color:var(--coral); border:0; font-weight:600; letter-spacing:.04em; }
   .art-meta .dot { opacity:.4; }
-
   .art-wrap { display:grid; grid-template-columns: 240px 1fr; gap:64px; align-items:flex-start; }
   @media (max-width: 980px) { .art-wrap { grid-template-columns: 1fr; gap:32px; } }
-  .toc { position:sticky; top:100px; }
-  @media (max-width: 980px) { .toc { position:static; } }
+  .toc { position:sticky; top:100px; } @media (max-width: 980px) { .toc { position:static; } }
   .toc h4 { font-family:var(--font-display); font-size:.8rem; text-transform:uppercase; letter-spacing:.16em; opacity:.55; margin:0 0 16px; font-weight:600; }
   .toc ol { list-style:none; padding:0; margin:0; counter-reset:t; }
-  .toc li { counter-increment:t; padding:8px 0; border-top:1px solid var(--line); font-size:.92rem; }
-  .toc li:first-child { border-top:none; }
+  .toc li { counter-increment:t; padding:8px 0; border-top:1px solid var(--line); font-size:.92rem; } .toc li:first-child { border-top:none; }
   .toc a { display:flex; gap:12px; opacity:.82; font-family:var(--font-display); font-weight:500; }
   .toc a::before { content:counter(t, decimal-leading-zero); color:var(--coral); font-weight:700; min-width:24px; }
   .toc a:hover { opacity:1; color:var(--coral); }
-
   .art-body { max-width: 70ch; font-size: 1.06rem; line-height: 1.7; }
   .art-body h2 { font-size: clamp(1.5rem, 2.2vw, 1.9rem); margin: 48px 0 16px; }
   .art-body h3 { font-size: 1.18rem; margin: 28px 0 10px; }
-  .art-body p { opacity: .88; }
-  .art-body ul, .art-body ol { padding-left: 24px; opacity: .88; }
-  .art-body li { padding: 4px 0; }
-  .art-body strong { opacity: 1; }
+  .art-body p, .art-body ul, .art-body ol { opacity: .88; } .art-body ul, .art-body ol { padding-left: 24px; }
+  .art-body li { padding: 4px 0; } .art-body strong { opacity: 1; }
   .art-body a { color: var(--coral-700); border-bottom: 1px solid rgba(255,106,69,.4); }
   .art-body a:hover { border-bottom-color: var(--coral); }
-
-  .lede { font-size: 1.2rem; line-height: 1.55; opacity: .92; padding: 0; margin-bottom: 32px; }
-
+  .lede { font-size: 1.2rem; line-height: 1.55; opacity: .92; margin-bottom: 32px; }
   .callout { padding: 22px 24px; background: var(--cream-2); border-left: 4px solid var(--coral); border-radius: 0 var(--r-md) var(--r-md) 0; margin: 32px 0; }
   .callout strong { font-family: var(--font-display); display:block; margin-bottom:6px; }
-
   table.budget { width:100%; border-collapse:collapse; margin:24px 0; font-size:.94rem; }
   table.budget th, table.budget td { padding:14px 16px; border-bottom:1px solid var(--line); text-align:left; }
   table.budget th { background:var(--cream-2); font-family:var(--font-display); font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; }
   table.budget td:first-child { font-family:var(--font-display); font-weight:600; }
-  table.budget td:last-child { font-family:var(--font-display); font-weight:700; color:var(--coral-700); white-space:nowrap; }
-
   .end-cta { margin: 64px 0 0; padding: 36px 40px; background: var(--royal); color: var(--cream); border-radius: var(--r-lg); display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center; }
   @media (max-width: 720px) { .end-cta { grid-template-columns: 1fr; } }
   .end-cta h3 { color: var(--cream); font-size: 1.4rem; margin-bottom: 6px; }
   .end-cta p { margin: 0; opacity: .85; font-size: 1rem; max-width: 46ch; }
-
   .related { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:24px; }
   @media (max-width: 820px) { .related { grid-template-columns:1fr; } }
   .related a { display:block; padding:22px; background:var(--paper); border:1px solid var(--line); border-radius:var(--r-md); transition:.2s; }
@@ -105,26 +88,11 @@
 </head>
 <body>
 
-<header class="nav" data-screen-label="Article nav">
+<header class="nav">
   <div class="container nav-inner">
-    <a class="nav-logo" href="/" aria-label="Macroshifts home"><img src="../assets/logo-navy.png" alt="Macroshifts"></a>
+    <a class="nav-logo" href="/"><img src="../assets/logo-navy.png" alt="Macroshifts"></a>
     <nav class="nav-links">
-      <a href="/">Home</a>
-      <a href="/Services">Services</a>
-      <div class="nav-dropdown">
-        <button class="nav-drop-trigger" aria-expanded="false" aria-haspopup="true">Solutions <span class="caret">▾</span></button>
-        <div class="nav-drop-menu" role="menu">
-          <a href="/solutions/startups"><strong>Startups</strong><span class="desc">From idea to first paying customer</span></a>
-          <a href="/solutions/local-business"><strong>Local Business</strong><span class="desc">Win in your local market</span></a>
-          <a href="/solutions/enterprises"><strong>Enterprises</strong><span class="desc">Transform legacy operations</span></a>
-          <a href="/solutions/solo-founders"><strong>Solo Founders</strong><span class="desc">Ship without a co-founder</span></a>
-          <a href="/solutions/ecommerce"><strong>Ecommerce</strong><span class="desc">DTC, marketplace, subscription</span></a>
-        </div>
-      </div>
-      <a href="/About">About</a>
-      <a href="/Careers">Careers</a>
-      <a href="/Newsletter" class="active">Newsletter</a>
-      <a href="/Contact">Contact</a>
+      <a href="/">Home</a><a href="/Services">Services</a><div class="nav-dropdown"><button class="nav-drop-trigger" aria-expanded="false" aria-haspopup="true">Solutions <span class="caret">▾</span></button><div class="nav-drop-menu" role="menu"><a href="/solutions/startups"><strong>Startups</strong><span class="desc">From idea to first paying customer</span></a><a href="/solutions/local-business"><strong>Local Business</strong><span class="desc">Win in your local market</span></a><a href="/solutions/enterprises"><strong>Enterprises</strong><span class="desc">Transform legacy operations</span></a><a href="/solutions/solo-founders"><strong>Solo Founders</strong><span class="desc">Ship without a co-founder</span></a><a href="/solutions/ecommerce"><strong>Ecommerce</strong><span class="desc">DTC, marketplace, subscription</span></a></div></div><a href="/About">About</a><a href="/Careers">Careers</a><a href="/Newsletter" class="active">Newsletter</a><a href="/Contact">Contact</a>
     </nav>
     <div class="nav-cta">
       <a href="/Contact" class="btn btn-primary">Pitch your idea <span class="arr">→</span></a>
@@ -134,13 +102,11 @@
 </header>
 
 <main>
-<section class="page-hero" data-screen-label="Article hero">
+<section class="page-hero">
   <div class="container">
-    <div class="crumbs reveal">
-      <a href="/Newsletter">Newsletter</a><span>/</span><a href="/Newsletter">Build</a><span>/</span><span style="color:var(--coral);">MVP cost</span>
-    </div>
-    <span class="eyebrow reveal" style="opacity:.85;">Build · 11 min read</span>
-    <h1 class="display reveal" data-delay="60" style="margin-top:18px;max-width:24ch;font-size:clamp(2rem,4vw,3.4rem);">MVP development cost in 2026: a real founder's <span class="serif">budget.</span></h1>
+    <div class="crumbs reveal"><a href="/Newsletter">Newsletter</a><span>/</span><a href="/Newsletter">Build</a><span>/</span><span style="color:var(--coral);">MVP development</span></div>
+    <span class="eyebrow reveal" style="opacity:.85;">Build · 10 min read</span>
+    <h1 class="display reveal" data-delay="60" style="margin-top:18px;max-width:24ch;font-size:clamp(2rem,4vw,3.4rem);">MVP development in 2026: what actually drives the <span class="serif">cost.</span></h1>
     <div class="art-meta reveal" data-delay="140">
       <span class="pill">Build</span>
       <span>Marcus Lin · Engineering Lead</span>
@@ -157,17 +123,17 @@
         <h4>On this page</h4>
         <ol>
           <li><a href="#what-is-mvp">What an MVP actually is</a></li>
-          <li><a href="#budget-bands">The three real budget bands</a></li>
+          <li><a href="#bands">The three real MVP bands</a></li>
           <li><a href="#what-drives-cost">What drives MVP cost</a></li>
           <li><a href="#timeline">Realistic timelines</a></li>
           <li><a href="#in-house-vs-studio">In-house vs studio vs offshore</a></li>
-          <li><a href="#cost-saving">Where you can (and can't) cut cost</a></li>
+          <li><a href="#cost-saving">Where you can (and can't) cut scope</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ol>
       </aside>
 
       <article class="art-body reveal" data-delay="100">
-        <p class="lede">If you've asked four agencies for an MVP quote, you've probably gotten four wildly different numbers — $6,000, $25,000, $150,000, and a polite "let's discuss." Here's how to read those numbers, what they actually mean, and the budget we genuinely see work across 40+ studio builds since 2022.</p>
+        <p class="lede">If you've asked four agencies for an MVP quote, you've probably gotten four wildly different numbers and a polite "let's discuss." Here's how to read those quotes, what they actually mean, and the scope discipline we've seen work across 40+ studio builds since 2022.</p>
 
         <h2 id="what-is-mvp">What an MVP actually is (and what it isn't)</h2>
         <p>A <strong>minimum viable product</strong> is the smallest thing you can put in front of a real customer that proves a real hypothesis. That definition has three pressure points founders consistently miss:</p>
@@ -176,23 +142,23 @@
           <li><strong>"In front of a real customer" means somebody pays, signs up, or commits.</strong> A demo for friends isn't validation.</li>
           <li><strong>"Proves a hypothesis" means you write the hypothesis down before you build.</strong> If you can't say what would make you kill the project, you don't have an MVP plan, you have a wishlist.</li>
         </ul>
-        <p>An MVP is closer to a sharpened wedge than a stripped-down version of your eventual product. Budget conversations get clearer when you frame the spend that way.</p>
+        <p>An MVP is closer to a sharpened wedge than a stripped-down version of your eventual product. Scope conversations get clearer when you frame the work that way.</p>
 
-        <h2 id="budget-bands">The three real budget bands in 2026</h2>
-        <p>From the 40-odd MVP engagements we've run in the last three years, costs cluster in three bands. There isn't really a fourth — they bleed into <em>"that's not an MVP, that's a v1"</em> territory.</p>
+        <h2 id="bands">The three real MVP bands in 2026</h2>
+        <p>From the 40-odd MVP engagements we've run in the last three years, builds cluster in three bands. There isn't really a fourth — they bleed into <em>"that's not an MVP, that's a v1"</em> territory.</p>
         <table class="budget">
-          <thead><tr><th>Band</th><th>What you get</th><th>Range</th></tr></thead>
+          <thead><tr><th>Band</th><th>What you get</th></tr></thead>
           <tbody>
-            <tr><td>Prototype sprint</td><td>Clickable build, one workflow, no real backend, validates UI/UX with users</td><td>$8K–$20K</td></tr>
-            <tr><td>Functional MVP</td><td>Real auth, real database, 2–3 core flows, payments if relevant, deployed</td><td>$25K–$55K</td></tr>
-            <tr><td>Production MVP</td><td>Multi-tenant, integrations, analytics, basic admin, scales to first 1K users</td><td>$55K–$80K</td></tr>
+            <tr><td>Prototype sprint</td><td>Clickable build, one workflow, no real backend, validates UI/UX with users</td></tr>
+            <tr><td>Functional MVP</td><td>Real auth, real database, 2–3 core flows, payments if relevant, deployed</td></tr>
+            <tr><td>Production MVP</td><td>Multi-tenant, integrations, analytics, basic admin, scales to first 1K users</td></tr>
           </tbody>
         </table>
-        <p>Anything quoted under $8,000 is either a Figma deliverable in disguise or someone setting up a no-code template — neither is necessarily wrong, but call it what it is. Anything quoted over $80,000 isn't an MVP anymore; it's a v1 product with a marketing budget attached.</p>
+        <p>Anything quoted at the bottom of the market is either a Figma deliverable in disguise or someone setting up a no-code template — neither is necessarily wrong, but call it what it is. Anything quoted at the top of the market usually isn't an MVP anymore; it's a v1 product with a marketing budget attached.</p>
 
         <div class="callout">
           <strong>Reality check</strong>
-          The single biggest predictor of where you land in these bands isn't tech complexity — it's <em>scope discipline</em>. We've shipped functional MVPs at $25K and seen identical-looking apps quoted at $90K because the founder couldn't say no to a "small" admin dashboard.
+          The single biggest predictor of where you land in these bands isn't tech complexity — it's <em>scope discipline</em>. We've shipped functional MVPs for a fraction of the cost of identical-looking apps that were quoted much higher, because the founder couldn't say no to a "small" admin dashboard.
         </div>
 
         <h2 id="what-drives-cost">What actually drives MVP cost</h2>
@@ -205,16 +171,16 @@
         <p>"User can sign up" is two days. "User can sign up, pick a plan, enter a card, pay, get a receipt, manage their subscription, request a refund, and we don't get hit with a chargeback" is two to three weeks of careful work — Stripe (or equivalent), webhooks, tax handling, dunning, and the test paths through all of it.</p>
 
         <h3>3. Integrations</h3>
-        <p>Each third-party integration in your MVP adds roughly $3,000–$8,000 of work, depending on whether the API is sane. CRMs and email tools are usually fine. Anything involving SSO, calendars, banking, or "we'll just hit their endpoint" is often the worst offender in a build budget.</p>
+        <p>Each third-party integration in your MVP adds meaningful work, depending on whether the API is sane. CRMs and email tools are usually fine. Anything involving SSO, calendars, banking, or "we'll just hit their endpoint" is often the worst offender in a build budget.</p>
 
         <h3>4. Web vs mobile vs both</h3>
         <p>A responsive web app is the cheapest starting point. A native mobile app is roughly 1.6–2× a web app of similar scope, depending on platform support. Web plus mobile from day one is 2.5–3× and rarely worth it for an MVP — pick one, prove the wedge, then expand.</p>
 
         <h3>5. Senior hands vs junior bench</h3>
-        <p>The biggest hidden cost driver is the team you don't see. A $20K quote from a shop running juniors will frequently rebuild itself two or three times before launch. A $35K quote from a senior team usually ships once and ships better. Cheap is expensive when the rebuild lands on you.</p>
+        <p>The biggest hidden cost driver is the team you don't see. A cheap quote from a shop running juniors will frequently rebuild itself two or three times before launch. A higher quote from a senior team usually ships once and ships better. Cheap is expensive when the rebuild lands on you.</p>
 
         <h2 id="timeline">Realistic timelines: 4 to 12 weeks</h2>
-        <p>The cleanest correlation we see across builds: <strong>$5,000 per week of dedicated senior team time</strong>, all-in. So a $35,000 MVP is roughly seven weeks of focused work. That's a useful rule of thumb when you compare quotes — divide cost by $5K and ask if the timeline matches.</p>
+        <p>The cleanest correlation we see across builds is <strong>one focused week of senior team time</strong> per slice of MVP scope, all-in. So a build with seven well-defined slices is roughly seven weeks of focused work. That's a useful rule of thumb when you compare quotes — divide the work into weeks and ask if the timeline matches.</p>
         <ul>
           <li><strong>Weeks 1–2:</strong> Strategy, scope lock, wireframes, technical architecture, design system</li>
           <li><strong>Weeks 3–6:</strong> Core build — auth, primary flows, data model, basic admin</li>
@@ -226,18 +192,18 @@
 
         <h2 id="in-house-vs-studio">In-house, studio, or offshore</h2>
         <h3>In-house (one or two engineers + a founder)</h3>
-        <p><strong>True cost:</strong> $45K–$120K for 12 weeks, once you factor salary, equity, equipment, and time-to-hire. Plus the dead time finding the people.<br>
+        <p><strong>True cost:</strong> Highest, once you factor salary, equity, equipment, and time-to-hire. Plus the dead time finding the people.<br>
         <strong>When it's right:</strong> You're technical, you can hire well, and you intend to keep building for years. If you're going to raise a Series A in 12 months, you'll need this team anyway.</p>
 
         <h3>Venture studio</h3>
-        <p><strong>True cost:</strong> Quoted in our table above — $8K–$80K depending on band, with some studios (including <a href="/Services">ours</a>) taking part of the fee in equity to align incentives.<br>
+        <p><strong>True cost:</strong> Middle of the market, with some studios (including <a href="/Services">ours</a>) taking part of the fee in equity to align incentives.<br>
         <strong>When it's right:</strong> You want a senior team for the build without owning the recruiting problem, and you want them to stay accountable to launch metrics rather than billable hours.</p>
 
         <h3>Offshore agency</h3>
-        <p><strong>True cost:</strong> Quoted at $10K–$30K, real spend often $25K–$60K once rebuilds and PM overhead are added in.<br>
+        <p><strong>True cost:</strong> Cheapest on paper, often higher in practice once rebuilds and PM overhead are added in.<br>
         <strong>When it's right:</strong> The scope is dead-simple and well-specced; you have a strong technical co-founder to QA every PR; and English/timezone overlap is real, not nominal.</p>
 
-        <h2 id="cost-saving">Where you can (and can't) cut cost</h2>
+        <h2 id="cost-saving">Where you can (and can't) cut scope</h2>
         <p>The honest places to cut:</p>
         <ul>
           <li><strong>Strip to one user role.</strong> Move the admin to a Notion table you update manually until you have 50 paying users.</li>
@@ -253,12 +219,12 @@
         </ul>
 
         <h2 id="faq">FAQ</h2>
-        <h3>Can I build an MVP for under $10,000 in 2026?</h3>
-        <p>Yes, if the scope is honest. A clickable prototype validating a single workflow with real users is genuinely achievable at $8K–$10K with the right team. A "real" payments-and-auth MVP under $10K is almost always going to cost you more than that in the long run.</p>
+        <h3>What's the smallest viable MVP scope in 2026?</h3>
+        <p>If the scope is honest, a clickable prototype validating a single workflow with real users is genuinely achievable at the low end of the market. A "real" payments-and-auth MVP at the bottom of the market is almost always going to cost you more than that in the long run.</p>
         <h3>Should I pay fixed-price or time-and-materials?</h3>
         <p>For a tightly scoped MVP with a clear hypothesis, fixed-price aligns incentives. For an exploratory product where the scope will evolve in week 2, time-and-materials with a weekly cap is more honest. We default to fixed-fee with a written change-order process; founders prefer the predictability.</p>
-        <h3>What does "MVP development cost" usually exclude?</h3>
-        <p>Hosting (negligible at MVP scale), domain and DNS (under $50), Stripe fees (only if you charge), and your customer-acquisition spend (the real second-biggest budget item after build). Always read what the quote includes — design, copywriting, content, deployment, post-launch fixes — separately.</p>
+        <h3>What does an MVP quote usually exclude?</h3>
+        <p>Hosting (negligible at MVP scale), domain and DNS, Stripe fees (only if you charge), and your customer-acquisition spend (the real second-biggest budget item after build). Always read what the quote includes — design, copywriting, content, deployment, post-launch fixes — separately.</p>
         <h3>How do I get an accurate MVP quote?</h3>
         <p>Write a one-page brief: target user, the one problem you're solving, the single workflow that proves it works, the integration list, and your launch date. Hand the same brief to three vendors. Ignore quotes that come in without questions — those are template prices, not real estimates.</p>
 
@@ -274,7 +240,7 @@
         <div class="related">
           <a href="/articles/validate-saas-idea-14-days"><div class="cat">Strategy</div><h4>Validate a SaaS idea in 14 days — the studio's framework</h4></a>
           <a href="/articles/preseed-pitch-deck-template"><div class="cat">Fundraising</div><h4>The pre-seed pitch deck template that closed real rounds</h4></a>
-          <a href="/articles/seo-saas-startups-2026"><div class="cat">SEO &amp; growth</div><h4>SEO for SaaS startups — where to spend your first £5,000</h4></a>
+          <a href="/articles/seo-saas-startups-2026"><div class="cat">SEO &amp; growth</div><h4>SEO for SaaS startups — where to focus first</h4></a>
         </div>
       </article>
     </div>
@@ -282,29 +248,14 @@
 </section>
 </main>
 
-<footer class="footer" data-screen-label="Footer">
+<footer class="footer">
   <div class="container">
     <div class="footer-top">
-      <div class="footer-col">
-        <div class="footer-logo"><img src="../assets/logo-cream.png" alt="Macroshifts"></div>
-        <p style="opacity:.7;max-width:30ch;">The venture studio that turns founders' ideas into funded companies.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="/">Home</a><a href="/About">About</a><a href="/Services">Services</a><a href="/Careers">Careers</a><a href="/Newsletter">Newsletter</a><a href="/Compliance">Compliance</a><a href="/Contact">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <a href="/Services">Websites &amp; apps</a><a href="/Services">SEO &amp; digital growth</a><a href="/Services">Strategy &amp; consulting</a><a href="/Services">Managed IT</a><a href="/Services">Investment support</a><a href="/Services">Affiliate marketing</a>
-      </div>
-      <div class="footer-col">
-        <h4>Solutions</h4>
-        <a href="/solutions/startups">Startups</a><a href="/solutions/local-business">Local Business</a><a href="/solutions/enterprises">Enterprises</a><a href="/solutions/solo-founders">Solo Founders</a><a href="/solutions/ecommerce">Ecommerce</a>
-      </div>
-      <div class="footer-col">
-        <h4>Get in touch</h4>
-        <a href="mailto:hello@macroshifts.com">hello@macroshifts.com</a><a href="/Contact">Book a call</a><a href="#">LinkedIn</a><a href="#">X / Twitter</a>
-      </div>
+      <div class="footer-col"><div class="footer-logo"><img src="../assets/logo-cream.png" alt="Macroshifts"></div><p style="opacity:.7;max-width:30ch;">The venture studio that turns founders' ideas into funded companies.</p></div>
+      <div class="footer-col"><h4>Company</h4><a href="/">Home</a><a href="/About">About</a><a href="/Services">Services</a><a href="/Careers">Careers</a><a href="/Newsletter">Newsletter</a><a href="/Compliance">Compliance</a><a href="/Contact">Contact</a></div>
+      <div class="footer-col"><h4>Services</h4><a href="/Services">Websites &amp; apps</a><a href="/Services">SEO &amp; digital growth</a><a href="/Services">Strategy &amp; consulting</a><a href="/Services">Managed IT</a><a href="/Services">Investment support</a><a href="/Services">Affiliate marketing</a></div>
+      <div class="footer-col"><h4>Solutions</h4><a href="/solutions/startups">Startups</a><a href="/solutions/local-business">Local Business</a><a href="/solutions/enterprises">Enterprises</a><a href="/solutions/solo-founders">Solo Founders</a><a href="/solutions/ecommerce">Ecommerce</a></div>
+      <div class="footer-col"><h4>Get in touch</h4><a href="mailto:hello@macroshifts.com">hello@macroshifts.com</a><a href="/Contact">Book a call</a><a href="#">LinkedIn</a><a href="#">X / Twitter</a></div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Macroshifts. All rights reserved.</span>
@@ -319,7 +270,6 @@
     </div>
   </div>
 </footer>
-
 <script src="../assets/site.js"></script>
 </body>
 </html>
