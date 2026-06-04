@@ -141,12 +141,9 @@ p { margin: 0 0 1em; }
 
 /* Dropdown nav */
 .nav-dropdown { position: relative; }
-.nav-drop-trigger { background: rgba(255,106,69,.10); border: 1px solid rgba(255,106,69,.28); padding: 5px 12px; border-radius: var(--r-pill); cursor: pointer; font-family: var(--font-display); font-weight: 600; font-size: .84rem; letter-spacing: -.01em; color: var(--coral-700); display: inline-flex; align-items: center; gap: 5px; transition: background .15s, border-color .15s, color .15s; }
-.nav-drop-trigger:hover { background: rgba(255,106,69,.18); border-color: rgba(255,106,69,.45); }
-.nav-drop-trigger[aria-expanded="true"] { background: var(--coral); border-color: var(--coral); color: #fff; }
-.nav.on-royal .nav-drop-trigger { background: rgba(255,106,69,.22); border-color: rgba(255,106,69,.55); color: var(--coral); }
-.nav.on-royal .nav-drop-trigger:hover { background: rgba(255,106,69,.34); border-color: var(--coral); }
-.nav.on-royal .nav-drop-trigger[aria-expanded="true"] { background: var(--coral); color: #fff; }
+.nav-drop-trigger { background: var(--coral); border: 1px solid var(--coral); padding: 5px 14px 5px 14px; border-radius: var(--r-pill); cursor: pointer; font-family: var(--font-display); font-weight: 600; font-size: .84rem; letter-spacing: -.01em; color: #fff; display: inline-flex; align-items: center; gap: 6px; transition: background .15s, border-color .15s, box-shadow .15s; box-shadow: 0 4px 14px -6px rgba(255,106,69,.55); }
+.nav-drop-trigger:hover { background: var(--coral-700); border-color: var(--coral-700); box-shadow: 0 6px 18px -6px rgba(255,106,69,.65); }
+.nav-drop-trigger[aria-expanded="true"] { background: var(--coral-700); border-color: var(--coral-700); }
 .nav-drop-trigger .caret { font-size: .62rem; line-height: 1; transition: transform .2s; }
 .nav-dropdown:hover .nav-drop-trigger .caret, .nav-drop-trigger[aria-expanded="true"] .caret { transform: rotate(180deg); }
 .nav-drop-menu { position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%) translateY(-6px); min-width: 280px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-md); padding: 10px; box-shadow: var(--shadow-md); opacity: 0; visibility: hidden; transition: opacity .18s, transform .18s, visibility .18s; z-index: 200; }
