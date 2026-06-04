@@ -179,6 +179,43 @@ p { margin: 0 0 1em; }
 .footer h4 { font-size: .82rem; text-transform: uppercase; letter-spacing: .16em; opacity: .55; margin-bottom: 16px; font-weight: 600; }
 .footer-col a { display: block; padding: 7px 0; opacity: .82; transition: opacity .15s, transform .15s; }
 .footer-col a:hover { opacity: 1; transform: translateX(3px); }
+/* ---------- Seasonal discount popup ---------- */
+.season-modal { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; pointer-events: none; padding: 20px; }
+.season-modal.open { pointer-events: auto; }
+.season-modal .season-backdrop { position: absolute; inset: 0; background: rgba(12,23,63,.62); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); opacity: 0; transition: opacity .25s ease; }
+.season-modal.open .season-backdrop { opacity: 1; }
+.season-modal .particles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; opacity: 0; transition: opacity .4s ease .15s; }
+.season-modal.open .particles { opacity: 1; }
+.season-modal .particle { position: absolute; top: -50px; font-size: 22px; line-height: 1; opacity: 0; animation: msFall linear infinite; will-change: transform; user-select: none; }
+@keyframes msFall { 0% { opacity: 0; transform: translateY(0) rotate(0deg); } 8% { opacity: .85; } 92% { opacity: .85; } 100% { opacity: 0; transform: translateY(115vh) rotate(360deg); } }
+.season-card { position: relative; background: var(--paper); border-radius: var(--r-lg); padding: clamp(32px,4vw,48px) clamp(28px,4vw,44px); width: min(94vw, 520px); max-height: 92vh; overflow-y: auto; box-shadow: var(--shadow-lg); transform: translateY(24px) scale(.94); opacity: 0; transition: transform .35s cubic-bezier(.2,.7,.2,1), opacity .25s ease; text-align: center; }
+.season-modal.open .season-card { transform: translateY(0) scale(1); opacity: 1; }
+.season-close { position: absolute; top: 14px; right: 14px; width: 32px; height: 32px; border-radius: 50%; background: var(--cream-2); border: 0; cursor: pointer; font-size: 22px; line-height: 1; opacity: .6; transition: opacity .15s, background .15s, color .15s; display: grid; place-items: center; padding: 0; color: var(--ink); }
+.season-close:hover { opacity: 1; background: var(--coral); color: #fff; }
+.season-emoji { font-size: clamp(54px, 8vw, 72px); line-height: 1; display: inline-block; margin-bottom: 14px; animation: msBob 3.2s ease-in-out infinite; }
+@keyframes msBob { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-8px) rotate(3deg); } }
+.season-eyebrow { font-family: var(--font-display); font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--season-accent, var(--coral)); margin-bottom: 12px; display: block; }
+.season-card h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.6rem, 2.8vw, 2.1rem); line-height: 1.04; letter-spacing: -.02em; margin: 0 0 12px; color: var(--ink); }
+.season-discount { font-family: var(--font-display); font-weight: 800; font-size: clamp(2.6rem, 5vw, 3.8rem); line-height: 1; letter-spacing: -.04em; color: var(--season-accent, var(--coral)); display: block; margin: 6px 0 14px; }
+.season-discount .pct { font-size: 1.1em; }
+.season-discount .lbl { display: block; font-size: .9rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); opacity: .55; margin-top: 4px; }
+.season-card > p { margin: 0 0 22px; opacity: .82; font-size: 1rem; line-height: 1.5; }
+.season-form { display: flex; gap: 8px; max-width: 380px; margin: 0 auto; }
+@media (max-width: 460px) { .season-form { flex-direction: column; } }
+.season-form input { flex: 1; padding: 12px 16px; border: 1.5px solid var(--line); border-radius: var(--r-pill); font-family: var(--font-body); font-size: 1rem; background: #fff; color: var(--ink); transition: border-color .15s, box-shadow .15s; min-width: 0; }
+.season-form input:focus { outline: 0; border-color: var(--season-accent, var(--coral)); box-shadow: 0 0 0 4px rgba(255,106,69,.12); }
+.season-form button { background: var(--season-accent, var(--coral)); color: #fff; border: 0; padding: 12px 22px; border-radius: var(--r-pill); font-family: var(--font-display); font-weight: 600; font-size: .95rem; cursor: pointer; transition: background .15s, transform .15s; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.season-form button:hover { background: var(--season-accent-dark, var(--coral-700)); transform: translateY(-1px); }
+.season-form button:disabled { opacity: .6; cursor: not-allowed; transform: none; }
+.season-fine { margin-top: 12px; font-size: .78rem; opacity: .55; }
+.season-success { padding: 8px 0; }
+.season-success .ok { width: 56px; height: 56px; border-radius: 50%; background: var(--season-accent, var(--coral)); color: #fff; display: grid; place-items: center; margin: 0 auto 16px; font-size: 26px; }
+.season-success h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.4rem; margin: 0 0 6px; color: var(--ink); }
+.season-success p { margin: 0; opacity: .75; }
+@media (prefers-reduced-motion: reduce) {
+  .season-backdrop, .season-card, .season-emoji, .particles, .particle { animation: none !important; transition: opacity .15s !important; }
+}
+
 /* ---------- Lead popup modal ---------- */
 .lead-modal { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; pointer-events: none; padding: 20px; }
 .lead-modal.open { pointer-events: auto; }

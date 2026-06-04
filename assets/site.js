@@ -110,6 +110,152 @@
     show(saved);
   }
 
+  // Seasonal discount popup — month-themed, falling particles, email capture.
+  // Fires after 30s OR on exit-intent, whichever first. Skipped on /Contact.
+  // Once per visitor via localStorage flag 'ms_season_state'.
+  var SEASON_CONFIG = {
+    0:  { emoji: '🎆', particle: '✨', accent: '#E6A300', accentDark: '#B58200', headline: 'New year, new build.',          eyebrow: 'January Offer',     fine: 'New engagements booked before Jan 31.' },
+    1:  { emoji: '❤️', particle: '💗', accent: '#E63A56', accentDark: '#B5263F', headline: 'Fall in love with shipping.',  eyebrow: 'Valentine\'s Offer', fine: 'New engagements booked before Feb 28.' },
+    2:  { emoji: '☘️', particle: '🍀', accent: '#2EA869', accentDark: '#1F7E4D', headline: 'Lucky founders save big.',     eyebrow: 'St. Patrick\'s Offer', fine: 'New engagements booked before Mar 31.' },
+    3:  { emoji: '🌷', particle: '🌸', accent: '#E574B3', accentDark: '#B14C8A', headline: 'Spring into your build.',       eyebrow: 'Spring Offer',      fine: 'New engagements booked before Apr 30.' },
+    4:  { emoji: '🌸', particle: '🌼', accent: '#E58FCF', accentDark: '#B0689F', headline: 'Bloom this season.',            eyebrow: 'May Offer',         fine: 'New engagements booked before May 31.' },
+    5:  { emoji: '☀️', particle: '✨', accent: '#E6A300', accentDark: '#B58200', headline: 'Bright move, founder.',         eyebrow: 'Summer Offer',      fine: 'New engagements booked before Jun 30.' },
+    6:  { emoji: '🎆', particle: '🎇', accent: '#E63A56', accentDark: '#B5263F', headline: 'Declare independence — from bad agencies.', eyebrow: 'July 4th Offer', fine: 'New engagements booked before Jul 31.' },
+    7:  { emoji: '🏖️', particle: '☀️', accent: '#2F8CBC', accentDark: '#1E6A92', headline: 'Sun-up to ship-up.',            eyebrow: 'August Offer',      fine: 'New engagements booked before Aug 31.' },
+    8:  { emoji: '🍂', particle: '🍁', accent: '#D67A2A', accentDark: '#A85D1A', headline: 'New season, new shipping cycle.', eyebrow: 'Fall Offer',       fine: 'New engagements booked before Sep 30.' },
+    9:  { emoji: '🎃', particle: '👻', accent: '#9333EA', accentDark: '#6B1FAD', headline: 'No tricks. Real treat.',         eyebrow: 'Halloween Offer',   fine: 'New engagements booked before Oct 31.' },
+    10: { emoji: '🦃', particle: '🍂', accent: '#C2410C', accentDark: '#922F09', headline: 'We\'re thankful for founders.',  eyebrow: 'Thanksgiving Offer', fine: 'New engagements booked before Nov 30.' },
+    11: { emoji: '⛄', particle: '❄️', accent: '#2F8CBC', accentDark: '#1E6A92', headline: 'Wrap up the year shipping.',     eyebrow: 'Winter Offer',      fine: 'New engagements booked before Dec 31.' },
+  };
+
+  function initSeasonPopup() {
+    var path = window.location.pathname;
+    if (/\/Contact\/?$/i.test(path) || path === '/Contact') return;
+    try { if (localStorage.getItem('ms_season_state') === 'done') return; } catch (e) {}
+
+    var shown = false;
+    var timer = setTimeout(show, 30000);
+    function onExitIntent(e) { if (e.clientY < 10 && !shown) show(); }
+    document.addEventListener('mouseleave', onExitIntent);
+
+    function show() {
+      if (shown) return;
+      shown = true;
+      clearTimeout(timer);
+      document.removeEventListener('mouseleave', onExitIntent);
+
+      var month = new Date().getMonth();
+      var s = SEASON_CONFIG[month];
+      var seasonKey = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'][month];
+
+      var modal = document.createElement('div');
+      modal.className = 'season-modal';
+      modal.style.setProperty('--season-accent', s.accent);
+      modal.style.setProperty('--season-accent-dark', s.accentDark);
+      modal.innerHTML =
+        '<div class="season-backdrop"></div>' +
+        '<div class="particles" aria-hidden="true"></div>' +
+        '<div class="season-card" role="dialog" aria-modal="true" aria-labelledby="season-title">' +
+        '  <button class="season-close" aria-label="Close" type="button">×</button>' +
+        '  <span class="season-emoji" aria-hidden="true">' + s.emoji + '</span>' +
+        '  <span class="season-eyebrow">' + s.eyebrow + '</span>' +
+        '  <h2 id="season-title">' + s.headline + '</h2>' +
+        '  <span class="season-discount"><span class="pct">Up to 75%</span> OFF<span class="lbl">any studio engagement</span></span>' +
+        '  <p>Drop your email and we\'ll send the discount code — plus a short note on whether it\'s the right fit for what you\'re building.</p>' +
+        '  <form class="season-form" novalidate>' +
+        '    <input type="email" name="email" placeholder="you@yourcompany.com" required autocomplete="email">' +
+        '    <button type="submit">Claim discount →</button>' +
+        '  </form>' +
+        '  <p class="season-fine">' + s.fine + ' One per visitor. No spam.</p>' +
+        '  <div class="season-success" style="display:none;">' +
+        '    <div class="ok">✓</div>' +
+        '    <h3>You\'re in.</h3>' +
+        '    <p>Check your inbox in the next minute or two for the code.</p>' +
+        '  </div>' +
+        '</div>';
+      document.body.appendChild(modal);
+
+      // Falling particles
+      var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReduced) {
+        var particles = modal.querySelector('.particles');
+        var count = 16;
+        for (var i = 0; i < count; i++) {
+          var p = document.createElement('span');
+          p.className = 'particle';
+          p.textContent = s.particle;
+          p.style.left = (Math.random() * 100) + '%';
+          p.style.animationDuration = (6 + Math.random() * 6) + 's';
+          p.style.animationDelay = (Math.random() * 5) + 's';
+          p.style.fontSize = (14 + Math.random() * 14) + 'px';
+          particles.appendChild(p);
+        }
+      }
+
+      requestAnimationFrame(function () { modal.classList.add('open'); });
+
+      function close() {
+        modal.classList.remove('open');
+        setTimeout(function () { if (modal.parentNode) modal.parentNode.removeChild(modal); }, 320);
+        document.removeEventListener('keydown', escKey);
+        try { if (localStorage.getItem('ms_season_state') !== 'done') localStorage.setItem('ms_season_state', 'dismissed'); } catch (e) {}
+      }
+      function escKey(e) { if (e.key === 'Escape') close(); }
+
+      modal.querySelector('.season-close').addEventListener('click', close);
+      modal.querySelector('.season-backdrop').addEventListener('click', close);
+      document.addEventListener('keydown', escKey);
+
+      var form = modal.querySelector('.season-form');
+      var success = modal.querySelector('.season-success');
+      var fine = modal.querySelector('.season-fine');
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var originalBtnHtml = submitBtn.innerHTML;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var input = form.querySelector('input[name="email"]');
+        if (!input.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim())) {
+          input.style.borderColor = s.accent;
+          input.focus();
+          return;
+        }
+        var payload = {
+          name: 'Seasonal popup lead',
+          email: input.value.trim(),
+          message: 'Requested ' + s.eyebrow + ' discount code from popup on ' + window.location.pathname,
+          page: window.location.pathname,
+          season: seasonKey,
+        };
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Sending…';
+
+        fetch('/api/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        })
+          .then(function (r) {
+            if (!r.ok) throw new Error('Server error ' + r.status);
+            return r.json();
+          })
+          .then(function () {
+            form.style.display = 'none';
+            if (fine) fine.style.display = 'none';
+            success.style.display = 'block';
+            try { localStorage.setItem('ms_season_state', 'done'); } catch (e) {}
+            setTimeout(close, 3200);
+          })
+          .catch(function (err) {
+            console.error(err);
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHtml;
+            alert("Sorry, something went wrong. Email hello@macroshifts.com and we'll get you the code.");
+          });
+      });
+    }
+  }
+
   // Lead popup — fires after 35s OR on exit-intent, whichever first.
   // Skipped on /Contact (full form already there) and after a previous submission.
   function initLeadPopup() {
@@ -217,6 +363,9 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    initNav(); initDropdowns(); initReveal(); initCounters(); initHeroSwitch(); initLeadPopup();
+    initNav(); initDropdowns(); initReveal(); initCounters(); initHeroSwitch();
+    // Seasonal discount popup is the main popup. initLeadPopup is left defined for
+    // future re-enable but is intentionally not invoked here.
+    initSeasonPopup();
   });
 })();
