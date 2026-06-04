@@ -21,9 +21,9 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const RESEND_API_KEY = process.env.RESEND_API_KEY;
-  const TO = process.env.PITCH_TO || 'hello@macroshifts.com';
-  const FROM = process.env.PITCH_FROM || 'Macroshifts Pitch <pitch@macroshifts.com>';
+  const RESEND_API_KEY = (process.env.RESEND_API_KEY || '').trim();
+  const TO = (process.env.PITCH_TO || 'hello@macroshifts.com').trim();
+  const FROM = (process.env.PITCH_FROM || 'Macroshifts Pitch <pitch@macroshifts.com>').trim();
 
   if (!RESEND_API_KEY) {
     console.error('Missing RESEND_API_KEY env var');
@@ -95,7 +95,7 @@ export default async function handler(req, res) {
 
     return res.status(200).json({ ok: true });
   } catch (err) {
-    console.error('pitch handler error', err);
-    return res.status(500).json({ error: 'Server error' });
+    console.error('pitch handler error', err && err.stack ? err.stack : err);
+    return res.status(500).json({ error: 'Server error', detail: String(err && err.message || err) });
   }
 }
