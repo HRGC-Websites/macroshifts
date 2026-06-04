@@ -102,27 +102,9 @@
 <main>
 <section class="page-hero" data-screen-label="Newsletter hero">
   <div class="container">
-    <span class="eyebrow reveal" style="opacity:.85;">Newsletter &amp; field notes</span>
+    <span class="eyebrow reveal" style="opacity:.85;">Field notes from the studio</span>
     <h1 class="display reveal" data-delay="60" style="margin-top:20px;max-width:20ch;">What we learn, written for the next <span class="serif">founder.</span></h1>
-    <p class="lead measure reveal" data-delay="140" style="margin-top:24px;max-width:60ch;opacity:.85;">Every product we ship leaves us with a notebook of what worked and what didn't. We turn the best of it into a monthly newsletter and a feed of practical, search-friendly essays on building, growing, and raising.</p>
-  </div>
-</section>
-
-<!-- SIGNUP -->
-<section class="section bg-cream">
-  <div class="container">
-    <div class="signup reveal">
-      <div>
-        <span class="eyebrow">Monthly newsletter</span>
-        <h2 style="margin-top:14px;">One email. First Tuesday of the month.</h2>
-        <p>Three pieces of writing from the studio, one playbook we used last month, and one founder we backed worth knowing about. No fluff, no funnels, never sold.</p>
-        <p class="fine">Used by 8,400+ founders, operators &amp; investors. Unsubscribe in one click.</p>
-      </div>
-      <form id="subForm">
-        <input type="email" name="email" placeholder="founder@yourcompany.com" required>
-        <button type="submit" class="btn btn-primary">Subscribe <span class="arr">→</span></button>
-      </form>
-    </div>
+    <p class="lead measure reveal" data-delay="140" style="margin-top:24px;max-width:60ch;opacity:.85;">Every product we ship leaves us with a notebook of what worked and what didn't. We turn the best of it into a feed of practical, search-friendly essays on building, growing, and raising.</p>
   </div>
 </section>
 
@@ -236,24 +218,6 @@
   </div>
 </section>
 
-<!-- DIGEST -->
-<section class="section bg-paper">
-  <div class="container">
-    <div class="digest reveal">
-      <div>
-        <span class="eyebrow" style="opacity: .85;">The monthly digest</span>
-        <h2 style="margin-top: 16px;">A studio's worth of writing, summarised in one read.</h2>
-        <p>If you only have ten minutes a month for founder reading, this is the email we'd send you. Curated by the studio's senior team, never automated.</p>
-      </div>
-      <div class="stats">
-        <div><div class="v">8,400+</div><div class="l">Founders, operators &amp; investors subscribed</div></div>
-        <div><div class="v">62%</div><div class="l">Open rate (six-month average)</div></div>
-        <div><div class="v">22</div><div class="l">Issues sent since launch</div></div>
-        <div><div class="v">0</div><div class="l">Spam, sponsorships, or sold lists</div></div>
-      </div>
-    </div>
-  </div>
-</section>
 </main>
 
 <footer class="footer" data-screen-label="Footer">
@@ -310,17 +274,6 @@
           else { a.style.display = 'none'; }
         });
       });
-    });
-  })();
-  // subscribe form
-  (function(){
-    var form = document.getElementById('subForm');
-    if(!form) return;
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      var input = form.querySelector('input[name="email"]');
-      if(!input.value.trim()){ input.style.borderColor = 'var(--coral)'; return; }
-      form.innerHTML = '<div style="font-family:var(--font-display);font-weight:600;color:var(--royal);padding:14px 22px;">Welcome aboard — check your inbox for a confirmation email.</div>';
     });
   })();
 </script>

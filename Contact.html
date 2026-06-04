@@ -194,6 +194,9 @@
   });
   // submit
   var form = document.getElementById('pitchForm');
+  var submitBtn = form.querySelector('button[type="submit"]');
+  var originalBtnHtml = submitBtn.innerHTML;
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var ok = true;
@@ -202,9 +205,43 @@
       else { f.style.borderColor = ''; }
     });
     if(!ok) return;
-    form.classList.add('sent');
-    document.getElementById('success').classList.add('show');
-    window.scrollTo({top:0, behavior:'smooth'});
+
+    // Collect form data
+    var services = [];
+    form.querySelectorAll('.chips input:checked').forEach(function(c){ services.push(c.value); });
+    var payload = {
+      first: form.querySelector('[name="first"]').value.trim(),
+      last: form.querySelector('[name="last"]').value.trim(),
+      email: form.querySelector('[name="email"]').value.trim(),
+      company: form.querySelector('[name="company"]').value.trim(),
+      stage: form.querySelector('[name="stage"]').value,
+      services: services,
+      idea: form.querySelector('[name="idea"]').value.trim(),
+    };
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = 'Sending…';
+
+    fetch('/api/pitch', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
+    .then(function(r){
+      if (!r.ok) throw new Error('Server error ' + r.status);
+      return r.json();
+    })
+    .then(function(){
+      form.classList.add('sent');
+      document.getElementById('success').classList.add('show');
+      window.scrollTo({top:0, behavior:'smooth'});
+    })
+    .catch(function(err){
+      console.error(err);
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnHtml;
+      alert("Sorry, something went wrong sending the pitch. Please email hello@macroshifts.com directly and we'll pick it up there.");
+    });
   });
 </script>
 </body>
