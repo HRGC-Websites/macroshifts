@@ -14,6 +14,34 @@
     }
   }
 
+  // Dropdown nav (accessible toggle for keyboard + touch)
+  function initDropdowns() {
+    var triggers = document.querySelectorAll('.nav-drop-trigger');
+    if (!triggers.length) return;
+    triggers.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        triggers.forEach(function (b) { if (b !== btn) b.setAttribute('aria-expanded', 'false'); });
+        btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      });
+    });
+    document.addEventListener('click', function (e) {
+      triggers.forEach(function (btn) {
+        var parent = btn.closest('.nav-dropdown');
+        if (parent && !parent.contains(e.target)) {
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        triggers.forEach(function (btn) { btn.setAttribute('aria-expanded', 'false'); });
+      }
+    });
+  }
+
   // Scroll reveal
   function initReveal() {
     var els = document.querySelectorAll('.reveal');
@@ -83,6 +111,6 @@
   }
 
   document.addEventListener('DOMContentLoaded', function () {
-    initNav(); initReveal(); initCounters(); initHeroSwitch();
+    initNav(); initDropdowns(); initReveal(); initCounters(); initHeroSwitch();
   });
 })();
