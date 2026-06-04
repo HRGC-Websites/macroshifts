@@ -110,23 +110,37 @@
     show(saved);
   }
 
-  // Seasonal discount popup — month-themed, falling particles, email capture.
-  // Fires after 30s OR on exit-intent, whichever first. Skipped on /Contact.
-  // Once per visitor via localStorage flag 'ms_season_state'.
+  // Seasonal discount popup — month-themed (with holiday-window overrides),
+  // falling particles, email capture. Fires after 30s OR on exit-intent.
+  // Skipped on /Contact. Once per visitor via localStorage flag 'ms_season_state'.
   var SEASON_CONFIG = {
-    0:  { emoji: '🎆', particle: '✨', accent: '#E6A300', accentDark: '#B58200', headline: 'New year, new build.',          eyebrow: 'January Offer',     fine: 'New engagements booked before Jan 31.' },
-    1:  { emoji: '❤️', particle: '💗', accent: '#E63A56', accentDark: '#B5263F', headline: 'Fall in love with shipping.',  eyebrow: 'Valentine\'s Offer', fine: 'New engagements booked before Feb 28.' },
-    2:  { emoji: '☘️', particle: '🍀', accent: '#2EA869', accentDark: '#1F7E4D', headline: 'Lucky founders save big.',     eyebrow: 'St. Patrick\'s Offer', fine: 'New engagements booked before Mar 31.' },
-    3:  { emoji: '🌷', particle: '🌸', accent: '#E574B3', accentDark: '#B14C8A', headline: 'Spring into your build.',       eyebrow: 'Spring Offer',      fine: 'New engagements booked before Apr 30.' },
-    4:  { emoji: '🌸', particle: '🌼', accent: '#E58FCF', accentDark: '#B0689F', headline: 'Bloom this season.',            eyebrow: 'May Offer',         fine: 'New engagements booked before May 31.' },
-    5:  { emoji: '☀️', particle: '✨', accent: '#E6A300', accentDark: '#B58200', headline: 'Bright move, founder.',         eyebrow: 'Summer Offer',      fine: 'New engagements booked before Jun 30.' },
-    6:  { emoji: '🎆', particle: '🎇', accent: '#E63A56', accentDark: '#B5263F', headline: 'Declare independence — from bad agencies.', eyebrow: 'July 4th Offer', fine: 'New engagements booked before Jul 31.' },
-    7:  { emoji: '🏖️', particle: '☀️', accent: '#2F8CBC', accentDark: '#1E6A92', headline: 'Sun-up to ship-up.',            eyebrow: 'August Offer',      fine: 'New engagements booked before Aug 31.' },
-    8:  { emoji: '🍂', particle: '🍁', accent: '#D67A2A', accentDark: '#A85D1A', headline: 'New season, new shipping cycle.', eyebrow: 'Fall Offer',       fine: 'New engagements booked before Sep 30.' },
-    9:  { emoji: '🎃', particle: '👻', accent: '#9333EA', accentDark: '#6B1FAD', headline: 'No tricks. Real treat.',         eyebrow: 'Halloween Offer',   fine: 'New engagements booked before Oct 31.' },
-    10: { emoji: '🦃', particle: '🍂', accent: '#C2410C', accentDark: '#922F09', headline: 'We\'re thankful for founders.',  eyebrow: 'Thanksgiving Offer', fine: 'New engagements booked before Nov 30.' },
-    11: { emoji: '⛄', particle: '❄️', accent: '#2F8CBC', accentDark: '#1E6A92', headline: 'Wrap up the year shipping.',     eyebrow: 'Winter Offer',      fine: 'New engagements booked before Dec 31.' },
+    jan:         { emoji: '🎆', particle: '✨', accent: '#E6A300', accentDark: '#B58200', headline: 'New year, new build.',          eyebrow: 'January Offer',       fine: 'New engagements booked before Jan 31.' },
+    feb:         { emoji: '❤️', particle: '💗', accent: '#E63A56', accentDark: '#B5263F', headline: 'Fall in love with shipping.',  eyebrow: 'Valentine\'s Offer',  fine: 'New engagements booked before Feb 28.' },
+    mar:         { emoji: '☘️', particle: '🍀', accent: '#2EA869', accentDark: '#1F7E4D', headline: 'Lucky founders save big.',     eyebrow: 'St. Patrick\'s Offer', fine: 'New engagements booked before Mar 31.' },
+    apr:         { emoji: '🌷', particle: '🌸', accent: '#E574B3', accentDark: '#B14C8A', headline: 'Spring into your build.',       eyebrow: 'Spring Offer',        fine: 'New engagements booked before Apr 30.' },
+    may:         { emoji: '🌸', particle: '🌼', accent: '#E58FCF', accentDark: '#B0689F', headline: 'Bloom this season.',            eyebrow: 'May Offer',           fine: 'New engagements booked before May 31.' },
+    jun:         { emoji: '☀️', particle: '✨', accent: '#E6A300', accentDark: '#B58200', headline: 'Bright move, founder.',         eyebrow: 'Summer Offer',        fine: 'New engagements booked before Jun 30.' },
+    jul:         { emoji: '🎆', particle: '🎇', accent: '#E63A56', accentDark: '#B5263F', headline: 'Declare independence — from bad agencies.', eyebrow: 'July 4th Offer', fine: 'New engagements booked before Jul 31.' },
+    aug:         { emoji: '🏖️', particle: '☀️', accent: '#2F8CBC', accentDark: '#1E6A92', headline: 'Sun-up to ship-up.',            eyebrow: 'August Offer',        fine: 'New engagements booked before Aug 31.' },
+    sep:         { emoji: '🍂', particle: '🍁', accent: '#D67A2A', accentDark: '#A85D1A', headline: 'New season, new shipping cycle.', eyebrow: 'Fall Offer',         fine: 'New engagements booked before Sep 30.' },
+    oct:         { emoji: '🎃', particle: '👻', accent: '#9333EA', accentDark: '#6B1FAD', headline: 'No tricks. Real treat.',         eyebrow: 'Halloween Offer',     fine: 'New engagements booked before Oct 31.' },
+    nov:         { emoji: '🦃', particle: '🍂', accent: '#C2410C', accentDark: '#922F09', headline: 'We\'re thankful for founders.',  eyebrow: 'Thanksgiving Offer',  fine: 'New engagements booked before Nov 30.' },
+    blackfriday: { emoji: '🛍️', particle: '🛒', accent: '#0A0A0A', accentDark: '#000000', headline: 'Biggest deal of the year.',     eyebrow: 'Black Friday · Cyber Monday', fine: 'Limited window — Black Friday through Cyber Monday.' },
+    dec:         { emoji: '⛄', particle: '❄️', accent: '#2F8CBC', accentDark: '#1E6A92', headline: 'Wrap up the year shipping.',     eyebrow: 'Winter Offer',        fine: 'New engagements booked before Dec 31.' },
+    christmas:   { emoji: '🎄', particle: '🎁', accent: '#C8102E', accentDark: '#9B0C24', headline: 'Ship before the new year.',     eyebrow: 'Christmas Offer',     fine: 'Code expires Dec 31 — kick off in Q1.' },
   };
+
+  // Map a date to the right season key.
+  //   Black Friday window:  Nov 22 – Dec 2 (covers Thanksgiving-week sales + Cyber Monday tail)
+  //   Christmas window:      Dec 15 – Dec 31
+  //   Everything else:        defaults to the month key (jan…dec)
+  function getSeasonKey(d) {
+    var m = d.getMonth();   // 0-11
+    var day = d.getDate();  // 1-31
+    if ((m === 10 && day >= 22) || (m === 11 && day <= 2)) return 'blackfriday';
+    if (m === 11 && day >= 15) return 'christmas';
+    return ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'][m];
+  }
 
   function initSeasonPopup() {
     var path = window.location.pathname;
@@ -144,9 +158,10 @@
       clearTimeout(timer);
       document.removeEventListener('mouseleave', onExitIntent);
 
-      var month = new Date().getMonth();
-      var s = SEASON_CONFIG[month];
-      var seasonKey = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'][month];
+      // Allow ?season=oct etc. URL override for previewing any theme.
+      var override = (new URLSearchParams(window.location.search)).get('season');
+      var seasonKey = (override && SEASON_CONFIG[override]) ? override : getSeasonKey(new Date());
+      var s = SEASON_CONFIG[seasonKey];
 
       var modal = document.createElement('div');
       modal.className = 'season-modal';
