@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOC 2 Compliance for Startups: A 60-Day Readiness Plan (2026) | Macroshifts</title>
+<meta name="description" content="A practical 60-day SOC 2 readiness plan for early-stage startups: scope, controls, evidence, tooling, and what to skip. Built from real audits at seed and Series A.">
+<meta name="keywords" content="SOC 2 startup, SOC 2 compliance startup, SOC 2 readiness, SOC 2 early stage, startup security compliance">
+<link rel="canonical" href="https://macroshifts.com/articles/soc2-compliance-startup-guide.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="SOC 2 Compliance for Startups: A 60-Day Readiness Plan (2026)">
+<meta property="og:description" content="A practical 60-day SOC 2 readiness plan for early-stage startups — scope, controls, evidence, tooling.">
+<meta property="og:url" content="https://macroshifts.com/articles/soc2-compliance-startup-guide.html">
+<meta property="og:image" content="https://macroshifts.com/assets/logo-mark-1024.png">
+<meta property="og:site_name" content="Macroshifts">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SOC 2 Compliance for Startups: A 60-Day Readiness Plan">
+<meta name="twitter:description" content="A practical 60-day SOC 2 readiness plan for early-stage startups.">
+<meta name="twitter:image" content="https://macroshifts.com/assets/logo-mark-1024.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "SOC 2 Compliance for Startups: A 60-Day Readiness Plan (2026)",
+  "description": "A practical 60-day SOC 2 readiness plan for early-stage startups: scope, controls, evidence, tooling, and what to skip.",
+  "image": "https://macroshifts.com/assets/logo-mark-1024.png",
+  "author": { "@type": "Person", "name": "Marcus Lin", "jobTitle": "Engineering Lead, Macroshifts" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Macroshifts",
+    "logo": { "@type": "ImageObject", "url": "https://macroshifts.com/assets/logo-mark-512.png" }
+  },
+  "datePublished": "2026-04-20",
+  "dateModified": "2026-04-20",
+  "mainEntityOfPage": "https://macroshifts.com/articles/soc2-compliance-startup-guide.html"
+}
+</script>
+
+<link rel="icon" type="image/svg+xml" href="../assets/icon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/brand.css">
+<style>
+  .page-hero { background: var(--royal); color: var(--cream); padding: clamp(56px,7vw,100px) 0 clamp(40px,5vw,72px); }
+  .page-hero .display { color: var(--cream); } .page-hero .serif { color: var(--coral); }
+  .crumbs { display:flex; gap:8px; font-family:var(--font-display); font-size:.84rem; letter-spacing:.04em; opacity:.7; margin-bottom:24px; }
+  .crumbs a { opacity:.7; } .crumbs a:hover { opacity:1; color:var(--coral); } .crumbs span { opacity:.4; }
+  .art-meta { display:flex; gap:18px; flex-wrap:wrap; font-family:var(--font-display); font-size:.92rem; opacity:.82; margin-top:24px; align-items:center; }
+  .art-meta .pill { padding:5px 14px; border-radius:var(--r-pill); background:rgba(255,106,69,.18); color:var(--coral); border:0; font-weight:600; letter-spacing:.04em; }
+  .art-meta .dot { opacity:.4; }
+  .art-wrap { display:grid; grid-template-columns: 240px 1fr; gap:64px; align-items:flex-start; }
+  @media (max-width: 980px) { .art-wrap { grid-template-columns: 1fr; gap:32px; } }
+  .toc { position:sticky; top:100px; } @media (max-width: 980px) { .toc { position:static; } }
+  .toc h4 { font-family:var(--font-display); font-size:.8rem; text-transform:uppercase; letter-spacing:.16em; opacity:.55; margin:0 0 16px; font-weight:600; }
+  .toc ol { list-style:none; padding:0; margin:0; counter-reset:t; }
+  .toc li { counter-increment:t; padding:8px 0; border-top:1px solid var(--line); font-size:.92rem; } .toc li:first-child { border-top:none; }
+  .toc a { display:flex; gap:12px; opacity:.82; font-family:var(--font-display); font-weight:500; }
+  .toc a::before { content:counter(t, decimal-leading-zero); color:var(--coral); font-weight:700; min-width:24px; }
+  .toc a:hover { opacity:1; color:var(--coral); }
+  .art-body { max-width: 70ch; font-size: 1.06rem; line-height: 1.7; }
+  .art-body h2 { font-size: clamp(1.5rem, 2.2vw, 1.9rem); margin: 48px 0 16px; }
+  .art-body h3 { font-size: 1.18rem; margin: 28px 0 10px; }
+  .art-body p, .art-body ul, .art-body ol { opacity: .88; } .art-body ul, .art-body ol { padding-left: 24px; }
+  .art-body li { padding: 4px 0; } .art-body strong { opacity: 1; }
+  .art-body a { color: var(--coral-700); border-bottom: 1px solid rgba(255,106,69,.4); }
+  .art-body a:hover { border-bottom-color: var(--coral); }
+  .lede { font-size: 1.2rem; line-height: 1.55; opacity: .92; margin-bottom: 32px; }
+  .callout { padding: 22px 24px; background: var(--cream-2); border-left: 4px solid var(--coral); border-radius: 0 var(--r-md) var(--r-md) 0; margin: 32px 0; }
+  .callout strong { font-family: var(--font-display); display:block; margin-bottom:6px; }
+  table.budget { width:100%; border-collapse:collapse; margin:24px 0; font-size:.94rem; }
+  table.budget th, table.budget td { padding:14px 16px; border-bottom:1px solid var(--line); text-align:left; }
+  table.budget th { background:var(--cream-2); font-family:var(--font-display); font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; }
+  table.budget td:first-child { font-family:var(--font-display); font-weight:600; }
+  .end-cta { margin: 64px 0 0; padding: 36px 40px; background: var(--royal); color: var(--cream); border-radius: var(--r-lg); display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center; }
+  @media (max-width: 720px) { .end-cta { grid-template-columns: 1fr; } }
+  .end-cta h3 { color: var(--cream); font-size: 1.4rem; margin-bottom: 6px; }
+  .end-cta p { margin: 0; opacity: .85; font-size: 1rem; max-width: 46ch; }
+  .related { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:24px; }
+  @media (max-width: 820px) { .related { grid-template-columns:1fr; } }
+  .related a { display:block; padding:22px; background:var(--paper); border:1px solid var(--line); border-radius:var(--r-md); transition:.2s; }
+  .related a:hover { transform:translateY(-3px); border-color:var(--coral); box-shadow:var(--shadow-sm); }
+  .related .cat { font-family:var(--font-display); font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; color:var(--coral); font-weight:700; }
+  .related h4 { margin:8px 0 0; font-size:1.02rem; line-height:1.3; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="../Home.html"><img src="../assets/logo-navy.png" alt="Macroshifts"></a>
+    <nav class="nav-links">
+      <a href="../Home.html">Home</a><a href="../Services.html">Services</a><a href="../About.html">About</a><a href="../Careers.html">Careers</a><a href="../Newsletter.html" class="active">Newsletter</a><a href="../Contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="../Contact.html" class="btn btn-primary">Pitch your idea <span class="arr">→</span></a>
+      <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="page-hero">
+  <div class="container">
+    <div class="crumbs reveal"><a href="../Newsletter.html">Newsletter</a><span>/</span><a href="../Newsletter.html">Operate</a><span>/</span><span style="color:var(--coral);">SOC 2 readiness</span></div>
+    <span class="eyebrow reveal" style="opacity:.85;">Operate · 14 min read</span>
+    <h1 class="display reveal" data-delay="60" style="margin-top:18px;max-width:24ch;font-size:clamp(2rem,4vw,3.4rem);">SOC 2 for startups: a 60-day readiness <span class="serif">plan.</span></h1>
+    <div class="art-meta reveal" data-delay="140">
+      <span class="pill">Operate</span>
+      <span>Marcus Lin · Engineering Lead</span>
+      <span class="dot">·</span>
+      <span>20 April 2026</span>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-cream">
+  <div class="container">
+    <div class="art-wrap">
+      <aside class="toc reveal">
+        <h4>On this page</h4>
+        <ol>
+          <li><a href="#what-is-soc2">What SOC 2 actually is</a></li>
+          <li><a href="#when">When to start (not before)</a></li>
+          <li><a href="#cost">Real cost of SOC 2 in 2026</a></li>
+          <li><a href="#plan">The 60-day readiness plan</a></li>
+          <li><a href="#controls">Controls map for early-stage</a></li>
+          <li><a href="#tools">Tooling that actually helps</a></li>
+          <li><a href="#mistakes">Mistakes that fail audits</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ol>
+      </aside>
+
+      <article class="art-body reveal" data-delay="100">
+        <p class="lede">SOC 2 has stopped being a "Series B problem." Enterprise buyers now ask for it in seed-stage procurement reviews, and watching a £200K deal stall because you don't have a Type II report is a very expensive lesson. This is the 60-day plan we run with portfolio companies — what to do, what to skip, and how not to burn six months on auditor theatre.</p>
+
+        <h2 id="what-is-soc2">What SOC 2 actually is (in one paragraph)</h2>
+        <p>SOC 2 is an attestation report issued by a licensed CPA firm that says, "I looked at how this company protects customer data, and they're doing what they say they're doing." It's organised around five <strong>Trust Service Criteria</strong> — Security, Availability, Processing Integrity, Confidentiality, and Privacy — but in practice, 90% of early-stage SOC 2 scopes cover Security only (sometimes called "Common Criteria"). That's the only one you should chase first.</p>
+
+        <h3>Type I vs Type II — what to ask for</h3>
+        <p>A <strong>Type I</strong> is a point-in-time snapshot: "as of this date, the controls existed." It takes ~30 days and costs less, but enterprise buyers increasingly know it doesn't prove anything operational.</p>
+        <p>A <strong>Type II</strong> covers a window (3, 6, or 12 months) and proves controls operated effectively over time. It's what enterprises actually want. <strong>The right pattern for most startups in 2026:</strong> Type I to unblock active deals, then a 3-month Type II window as soon as the controls are stable.</p>
+
+        <h2 id="when">When to start SOC 2 (not before)</h2>
+        <p>The honest answer: <strong>when you've lost a deal because of it</strong>, or when your sales pipeline contains 3+ deals where SOC 2 is a procurement requirement. Starting earlier is often premature optimisation that costs you focus.</p>
+        <p>Trigger points worth waiting for:</p>
+        <ul>
+          <li>First enterprise deal in pipeline with a real security questionnaire (not a self-attested vendor form)</li>
+          <li>£500K+ ARR with at least one customer that's regulated (financial services, healthcare, government)</li>
+          <li>Series A close — investors will increasingly ask</li>
+          <li>You're hiring beyond ~12 employees and access controls are getting harder to track</li>
+        </ul>
+
+        <h2 id="cost">Real cost of SOC 2 for a startup in 2026</h2>
+        <table class="budget">
+          <thead><tr><th>Line item</th><th>Range (USD)</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Compliance platform (Drata / Vanta / Secureframe)</td><td>$8K–$15K/yr</td><td>Optional but pays back in evidence-gathering time</td></tr>
+            <tr><td>Auditor (Type I)</td><td>$8K–$15K</td><td>Once, point-in-time</td></tr>
+            <tr><td>Auditor (Type II, 3-month window)</td><td>$15K–$30K</td><td>Annual after that</td></tr>
+            <tr><td>Pen test (often required)</td><td>$5K–$15K</td><td>Annually</td></tr>
+            <tr><td>Internal time (you or your team)</td><td>120–200 hours</td><td>Don't underestimate</td></tr>
+          </tbody>
+        </table>
+        <p><strong>All-in for a first SOC 2 (Type I + Type II) at a 5–15 person startup: $35K–$70K and roughly 4–6 months of calendar time.</strong> Anyone quoting "SOC 2 in 30 days for $5K" is selling a Type I shell that won't survive a real enterprise procurement review.</p>
+
+        <h2 id="plan">The 60-day readiness plan</h2>
+
+        <h3>Days 1–10: Scope &amp; choose your stack</h3>
+        <ul>
+          <li>Decide on Security-only Common Criteria for v1 (skip Availability, Confidentiality, etc.)</li>
+          <li>Pick a compliance platform — Drata, Vanta, Secureframe, or Sprinto are the realistic options at this stage</li>
+          <li>Pick an auditor that does a lot of startup work (your platform vendor will introduce you to three)</li>
+          <li>Run a gap assessment — the platform's automated scan tells you what's already passing</li>
+        </ul>
+
+        <h3>Days 11–25: Policies</h3>
+        <p>Adopt the platform's policy templates. Customise three things only: company name, scope, and exception language. Founders waste two weeks rewriting policies that auditors don't read in detail. Get them signed by the team, tracked, and moved on.</p>
+        <p>Minimum policy set: Information Security Policy, Access Control, Change Management, Incident Response, Vendor Management, Acceptable Use, Business Continuity.</p>
+
+        <h3>Days 26–40: Controls in production</h3>
+        <ul>
+          <li>SSO + 2FA on every internal tool (Google Workspace, GitHub, AWS, Stripe, etc.)</li>
+          <li>Endpoint MDM enabled on every laptop — every laptop, including the founder's</li>
+          <li>Background checks on new hires (one-off vendor, $50–$100 per check)</li>
+          <li>Security awareness training assigned and completed (15-minute videos via the platform)</li>
+          <li>Logging shipped to a SIEM or platform-managed monitoring</li>
+          <li>Vendor list audited; remove or replace anything without a SOC 2 of its own where customer data is processed</li>
+        </ul>
+
+        <h3>Days 41–55: Evidence collection</h3>
+        <p>The auditor's job is to verify your controls operated effectively. The evidence they ask for is mostly automatable through the platform. Spot-check it weekly.</p>
+        <ul>
+          <li>Access reviews (quarterly recommended — start them in this window)</li>
+          <li>Change tickets for production deploys</li>
+          <li>Incident log (even if zero incidents, the log itself is evidence)</li>
+          <li>Onboarding/offboarding records</li>
+          <li>Pen test scheduled and dated</li>
+        </ul>
+
+        <h3>Days 56–60: Kickoff with the auditor</h3>
+        <p>By day 60, the platform should be showing &gt;95% controls passing. Schedule the kickoff call. Type I report typically arrives 3–4 weeks later. Type II window begins on a clean date you choose; the audit happens at the end of the window.</p>
+
+        <h2 id="controls">Controls map for an early-stage SaaS</h2>
+        <p>The Common Criteria has 33 controls in the 2017 framework (updated 2022). For a 5–15 person SaaS, here's how they cluster:</p>
+        <ul>
+          <li><strong>Logical access (CC6):</strong> SSO, 2FA, password policy, access reviews, least privilege. This is where most startups have the biggest gap.</li>
+          <li><strong>Change management (CC8):</strong> Code review enforced, deploys gated, production access logged.</li>
+          <li><strong>Operations (CC7):</strong> Monitoring, alerting, incident response process, vulnerability scanning.</li>
+          <li><strong>Risk management (CC3):</strong> Annual risk assessment documented, accepted-risk register.</li>
+          <li><strong>Vendor management (CC9):</strong> Critical vendors have a SOC 2 of their own; DPAs signed; access reviewed.</li>
+        </ul>
+
+        <h2 id="tools">Tooling that actually helps</h2>
+        <p>A compliance platform replaces roughly 80 hours of manual evidence collection. The four serious options for startups in 2026:</p>
+        <ul>
+          <li><strong>Drata</strong> — most popular for B2B SaaS, deepest integrations, fair pricing for startups</li>
+          <li><strong>Vanta</strong> — broadest ecosystem, great audit-network, slightly higher cost</li>
+          <li><strong>Secureframe</strong> — strong UI, good for design-conscious teams</li>
+          <li><strong>Sprinto</strong> — cheaper, good if you already have AWS-centric infra</li>
+        </ul>
+        <p>Don't try to DIY this with spreadsheets. We've seen it; the cost in internal time is always higher than the platform fee.</p>
+
+        <h2 id="mistakes">Mistakes that fail SOC 2 audits</h2>
+
+        <h3>1. Founder bypassing 2FA</h3>
+        <p>The CEO who insists on a personal exemption to 2FA is the single most common audit finding at startups. Don't be that exception.</p>
+
+        <h3>2. Skipping vendor reviews</h3>
+        <p>Auditors will pull a sample of your critical vendors and ask for their SOC 2 reports. If you can't produce them, the control fails. Catalog every SaaS that touches production data.</p>
+
+        <h3>3. Backdating evidence</h3>
+        <p>If a control wasn't operating on a date, don't pretend it was. Auditors will spot it; failing the audit because of fabrication is much worse than failing one control honestly.</p>
+
+        <h3>4. Treating SOC 2 as paperwork</h3>
+        <p>The point is the controls, not the report. Companies that get a report and quietly turn the controls off will fail their next Type II — and lose the customers they sold to off the first one.</p>
+
+        <h2 id="faq">FAQ</h2>
+        <h3>Do we need ISO 27001 instead of SOC 2?</h3>
+        <p>In North America, enterprise buyers ask for SOC 2. In Europe and APAC, ISO 27001 is more common. If you sell to both, do SOC 2 first (faster) and add ISO 27001 inside 18 months — the controls overlap heavily.</p>
+        <h3>Can we get SOC 2 with a fully remote team?</h3>
+        <p>Yes. Remote teams pass SOC 2 routinely. The control language is about access, not physical office space. MDM on every laptop is the main difference.</p>
+        <h3>Is SOC 2 actually a security guarantee?</h3>
+        <p>No. SOC 2 is a process attestation, not a security certification. Plenty of breached companies had SOC 2 reports. Use it as a procurement unlock, not as your security strategy.</p>
+        <h3>Should we hire a SOC 2 consultant?</h3>
+        <p>For most 5–15 person teams, the platform vendor's onboarding plus a part-time vCISO is enough. Full-time consultants are usually overkill at this stage. <a href="../Services.html">Managed compliance support</a> through a studio works for teams without a dedicated security hire.</p>
+
+        <div class="end-cta">
+          <div>
+            <h3>Need help getting audit-ready without slowing your team down?</h3>
+            <p>Our managed compliance engagement runs the platform, policies, evidence, and auditor relationship for you. You ship product; we get you to the report.</p>
+          </div>
+          <a href="../Contact.html" class="btn btn-primary" style="background:var(--coral);">Talk to the studio <span class="arr">→</span></a>
+        </div>
+
+        <h2 id="related">Related reading</h2>
+        <div class="related">
+          <a href="mvp-development-cost-2026.html"><div class="cat">Build</div><h4>MVP development cost in 2026 — a real founder's budget</h4></a>
+          <a href="seo-saas-startups-2026.html"><div class="cat">SEO &amp; growth</div><h4>SEO for SaaS startups — where to spend your first £5,000</h4></a>
+          <a href="preseed-pitch-deck-template.html"><div class="cat">Fundraising</div><h4>The pre-seed pitch deck template that closed real rounds</h4></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col"><div class="footer-logo"><img src="../assets/logo-cream.png" alt="Macroshifts"></div><p style="opacity:.7;max-width:30ch;">The venture studio that turns founders' ideas into funded companies.</p></div>
+      <div class="footer-col"><h4>Company</h4><a href="../Home.html">Home</a><a href="../About.html">About</a><a href="../Services.html">Services</a><a href="../Careers.html">Careers</a><a href="../Newsletter.html">Newsletter</a><a href="../Compliance.html">Compliance</a><a href="../Contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Services</h4><a href="../Services.html">Websites &amp; apps</a><a href="../Services.html">SEO &amp; digital growth</a><a href="../Services.html">Strategy &amp; consulting</a><a href="../Services.html">Managed IT</a><a href="../Services.html">Investment support</a></div>
+      <div class="footer-col"><h4>Get in touch</h4><a href="mailto:hello@macroshifts.com">hello@macroshifts.com</a><a href="../Contact.html">Book a call</a><a href="#">LinkedIn</a><a href="#">X / Twitter</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Macroshifts. All rights reserved.</span><span>From idea to enterprise.</span></div>
+  </div>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>
