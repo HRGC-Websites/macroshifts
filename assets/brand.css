@@ -179,6 +179,31 @@ p { margin: 0 0 1em; }
 .footer h4 { font-size: .82rem; text-transform: uppercase; letter-spacing: .16em; opacity: .55; margin-bottom: 16px; font-weight: 600; }
 .footer-col a { display: block; padding: 7px 0; opacity: .82; transition: opacity .15s, transform .15s; }
 .footer-col a:hover { opacity: 1; transform: translateX(3px); }
+/* ---------- Lead popup modal ---------- */
+.lead-modal { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; pointer-events: none; padding: 20px; }
+.lead-modal.open { pointer-events: auto; }
+.lead-backdrop { position: absolute; inset: 0; background: rgba(12,23,63,.55); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); opacity: 0; transition: opacity .25s ease; }
+.lead-modal.open .lead-backdrop { opacity: 1; }
+.lead-card { position: relative; background: var(--paper); border-radius: var(--r-lg); padding: clamp(28px,4vw,44px); width: min(92vw, 480px); max-height: 92vh; overflow-y: auto; box-shadow: var(--shadow-lg); transform: translateY(20px) scale(.96); opacity: 0; transition: transform .3s cubic-bezier(.2,.7,.2,1), opacity .25s ease; }
+.lead-modal.open .lead-card { transform: translateY(0) scale(1); opacity: 1; }
+.lead-close { position: absolute; top: 14px; right: 14px; width: 32px; height: 32px; border-radius: 50%; background: var(--cream-2); border: 0; cursor: pointer; font-size: 22px; line-height: 1; opacity: .6; transition: opacity .15s, background .15s, color .15s; display: grid; place-items: center; padding: 0; color: var(--ink); }
+.lead-close:hover { opacity: 1; background: var(--coral); color: #fff; }
+.lead-card .eyebrow { font-family: var(--font-display); font-size: .76rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--coral); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 12px; opacity: 1; }
+.lead-card .eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--coral); display: inline-block; }
+.lead-card h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.5rem, 2.4vw, 1.9rem); line-height: 1.05; letter-spacing: -.02em; margin: 0 0 10px; color: var(--ink); }
+.lead-card > p { margin: 0 0 22px; opacity: .8; font-size: .98rem; line-height: 1.55; }
+.lead-form label { display: block; margin-bottom: 14px; font-family: var(--font-display); font-weight: 600; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); opacity: .75; }
+.lead-form input, .lead-form textarea { width: 100%; margin-top: 8px; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: var(--r-sm); font-family: var(--font-body); font-size: 1rem; background: #fff; color: var(--ink); transition: border-color .15s, box-shadow .15s; resize: vertical; box-sizing: border-box; }
+.lead-form input:focus, .lead-form textarea:focus { outline: 0; border-color: var(--coral); box-shadow: 0 0 0 4px rgba(255,106,69,.12); }
+.lead-form button[type="submit"] { width: 100%; justify-content: center; margin-top: 6px; }
+.lead-success { text-align: center; padding: 16px 0 4px; }
+.lead-success .ok { width: 56px; height: 56px; border-radius: 50%; background: var(--coral); color: #fff; display: grid; place-items: center; margin: 0 auto 16px; font-size: 26px; }
+.lead-success h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; margin: 0 0 6px; color: var(--ink); }
+.lead-success p { margin: 0; opacity: .75; }
+@media (prefers-reduced-motion: reduce) {
+  .lead-backdrop, .lead-card { transition: none !important; }
+}
+
 .social-row { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
 .social-row a, .footer-col .social-row a { display: grid; place-items: center; width: 36px; height: 36px; padding: 0; border-radius: 50%; background: rgba(246,239,226,.1); opacity: 1; color: var(--cream); transform: none; transition: background .15s, transform .15s, color .15s; }
 .social-row a:hover, .footer-col .social-row a:hover { background: var(--coral); color: #fff; transform: translateY(-2px); }
