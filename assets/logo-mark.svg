@@ -1,16 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <!-- Navy rounded square -->
   <rect width="512" height="512" rx="112" fill="#15307E"/>
-
-  <!-- Italic serif 'm' in cream — echoes the wordmark's voice -->
-  <text x="256" y="372"
-        font-family="Instrument Serif, Georgia, 'Times New Roman', serif"
-        font-style="italic" font-weight="400"
-        font-size="440" fill="#F6EFE2"
+  <text x="208" y="352"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-style="normal" font-weight="700"
+        font-size="320" fill="#F6EFE2"
         text-anchor="middle">m</text>
-
-  <!-- Coral arched underline — mirrors the curve of the full wordmark -->
-  <path d="M 96 420 Q 256 470 416 420"
-        stroke="#FF6A45" stroke-width="20"
+  <path d="M 380 160 Q 460 256 380 352"
+        stroke="#FF6A45" stroke-width="32"
         stroke-linecap="round" fill="none"/>
 </svg>
