@@ -1,0 +1,34 @@
+# Macroshifts
+
+> Macroshifts is a venture studio that takes founders from idea to funded company — strategy, product engineering, managed IT, SEO, and warm investor introductions, all under one roof.
+
+Macroshifts ("from idea to enterprise") works with two kinds of clients: new founders who need an idea turned into a real, fundable business, and established businesses that need to modernise and grow. The same in-house team handles strategy, product engineering, operations, growth, and investor introductions — no hand-offs. Senior engineers do the build; engagements can be fee, equity, or a blend. Contact: hello@macroshifts.com.
+
+## Core pages
+- [Home](https://macroshifts.com/): Venture studio that turns founders' ideas into funded companies.
+- [Services](https://macroshifts.com/Services): Websites & apps, product & tech strategy, managed IT & support, and SEO & digital growth.
+- [About](https://macroshifts.com/About): The studio behind the work — senior-only engineering, founder-friendly terms, 40+ portfolio startups.
+- [Contact](https://macroshifts.com/Contact): Pitch an idea or book a call; reply within one business day.
+- [Careers](https://macroshifts.com/Careers): Remote roles across engineering, design, SEO, content, and operations.
+- [Newsletter](https://macroshifts.com/Newsletter): Field notes from the studio on building and funding companies.
+- [Compliance](https://macroshifts.com/Compliance): Terms of service, privacy policy, and compliance details.
+
+## Solutions
+- [Startups](https://macroshifts.com/solutions/startups): From idea to first paying customer.
+- [Local Business](https://macroshifts.com/solutions/local-business): Win in your local market.
+- [Enterprises](https://macroshifts.com/solutions/enterprises): Transform legacy operations.
+- [Solo Founders](https://macroshifts.com/solutions/solo-founders): Ship without a co-founder.
+- [Ecommerce](https://macroshifts.com/solutions/ecommerce): DTC, marketplace, and subscription growth.
+
+## Guides
+- [MVP Development Cost in 2026](https://macroshifts.com/articles/mvp-development-cost-2026): What actually drives the cost of building an MVP in 2026.
+- [SEO for SaaS Startups in 2026](https://macroshifts.com/articles/seo-saas-startups-2026): How early-stage SaaS companies should approach search.
+- [Validate a SaaS Idea in 14 Days](https://macroshifts.com/articles/validate-saas-idea-14-days): A two-week framework for testing demand before building.
+- [SOC 2 Compliance Startup Guide](https://macroshifts.com/articles/soc2-compliance-startup-guide): What SOC 2 means for early-stage startups and how to prepare.
+- [Pre-seed Pitch Deck Template](https://macroshifts.com/articles/preseed-pitch-deck-template): The slides investors expect in a pre-seed raise.
+
+## Facts
+- Studio model: idea validation, product build, managed operations, and investor introductions in-house.
+- Track record: 120+ products shipped, 40+ startups in the portfolio, customers across 50+ countries, 9+ years operating.
+- Engagement terms: fee, equity, or a blend, structured for early-stage founders.
+- Contact: hello@macroshifts.com · https://macroshifts.com

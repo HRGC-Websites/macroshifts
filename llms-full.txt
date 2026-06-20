@@ -1,0 +1,63 @@
+# Macroshifts — Full Reference
+
+> Macroshifts is a venture studio that takes founders from idea to funded company. It pairs strategy, product engineering, managed IT, and SEO/growth with warm investor introductions — one in-house team from a sentence on a napkin to a company with a term sheet.
+
+- Website: https://macroshifts.com
+- Contact: hello@macroshifts.com
+- Tagline: "From idea to enterprise."
+- LinkedIn: https://linkedin.com/company/macroshifts · Facebook: https://facebook.com/macroshifts · Instagram: https://instagram.com/macroshifts
+- Last updated: 2026-06-20
+
+## What Macroshifts is
+Macroshifts is a venture studio for founders and established businesses. Most studios hand over a prototype and walk away; Macroshifts stays through build, launch, operations, and the raise. The people who scope a build are the senior engineers who write the code — no junior bait-and-switch. Engagements can be structured as fee, equity, or a blend so early-stage founders can afford to start.
+
+## Who it helps
+- Founders with an idea: validation and strategy, MVP and full product build, and warm investor introductions — taking a sentence to a funded company.
+- Established businesses: modern websites and web apps, mobile apps and integrations, and the SEO and digital marketing that brings new customers in.
+
+## Services
+1. Build — Websites, apps & software. From a startup's first product to an established brand's website rebuild; websites and web apps, mobile apps and integrations, for new and existing businesses.
+2. Consult — Strategy & transformation. Product and tech strategy, digital transformation, and investor-ready roadmaps; the idea is pressure-tested into a plan you can execute and defend to investors.
+3. Operate — Managed IT & support. Cloud and infrastructure, security and monitoring, ongoing support and SLAs; the product keeps running after launch.
+4. Grow — SEO & digital growth. Technical and on-page SEO, content and performance marketing, analytics and conversion; getting found and turning traffic into customers.
+Also offered: investment support and affiliate marketing.
+
+## Process (the macroshift)
+1. Pitch — Bring the idea, however rough; the team validates the opportunity and tells you the truth.
+2. Shape — Strategy, roadmap, and architecture: a plan exciting to build and convincing to fund.
+3. Build — Engineers ship the real product in visible sprints, with the founder in the loop.
+4. Launch & raise — Operate it, refine on real usage, and open the investor network when it's time to raise.
+
+## Solutions (by audience)
+- Startups — from idea to first paying customer.
+- Local Business — win in your local market.
+- Enterprises — transform legacy operations.
+- Solo Founders — ship without a co-founder.
+- Ecommerce — DTC, marketplace, and subscription growth.
+
+## Why Macroshifts
+- Idea to capital, in-house: strategy, engineering, operations, and investor intros under one roof.
+- Senior engineers only: the people who scope your build write the code.
+- Founder-friendly terms: fee, equity, or a blend.
+- Stays after launch: managed IT and support keep the product running.
+
+## Track record
+- 120+ products shipped for founders.
+- 40+ startups in the portfolio.
+- Customers reached across 50+ countries.
+- 9+ years turning ideas into enterprises.
+
+## Guides / Insights
+- MVP Development in 2026: What Actually Drives the Cost — https://macroshifts.com/articles/mvp-development-cost-2026
+- SEO for SaaS Startups in 2026 — https://macroshifts.com/articles/seo-saas-startups-2026
+- How to Validate a SaaS Idea in 14 Days — https://macroshifts.com/articles/validate-saas-idea-14-days
+- SOC 2 Compliance: A Startup Guide — https://macroshifts.com/articles/soc2-compliance-startup-guide
+- The Pre-seed Pitch Deck Template — https://macroshifts.com/articles/preseed-pitch-deck-template
+
+## Careers (remote)
+Open roles include: Senior Full-Stack Engineer, Cloud/DevOps Engineer, AI/ML Engineer, Senior Product Designer, SEO Executive, Senior SEO Strategist, Content Editor, Research Editor, Account Manager, Technical Program Manager, and Investment Analyst. See https://macroshifts.com/Careers.
+
+## Contact
+- Email: hello@macroshifts.com
+- Pitch an idea / book a call: https://macroshifts.com/Contact
+- Macroshifts does not guarantee specific funding, revenue, or business outcomes.
